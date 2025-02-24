@@ -1,0 +1,131 @@
+@import 'style.css';
+
+.b__container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 1rem;
+    padding: 2rem 1rem;
+}
+
+.b__card {
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: 5.s;
+}
+
+.b__card div, .col div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.span__row {
+    grid-row-end: span 2;
+}
+
+.span__column-3 {
+    grid-column-end: span 3;
+}
+
+.span__column {
+    grid-column-end: span 2;
+}
+
+.bc__row {
+    display: flex;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: space-around;
+    padding: 2rem 1rem;
+    gap: 1rem;
+}
+
+.bc__row div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc((100% / 3) - 32px);
+}
+
+.b__card a {
+    color: var(--black);
+}
+
+.b__card h4, .b__card h5, .b__card p {
+    text-align: center;
+}
+
+.b__card h4 {
+    font-size: var(--font-subtitle);
+    font-weight: 500;
+}
+
+.b__card h5 {
+    font-size: var(--size-text);
+    font-weight: 400;
+}
+
+.b__card p, .b__card a {
+    font-size: var(--size-normal);
+    font-weight: 300;
+}
+
+@media screen and (max-width: 769px) {
+    .b__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .span__row {
+        grid-row-end: auto;
+        grid-column-end: span 2;
+    }
+    .col {
+        display: flex;
+        flex-direction: row !important;
+        gap: 1rem;
+    }
+    .span__column-3 {
+        grid-column-end: span 2;
+    }
+    .span__column {
+        grid-column-end: auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .b__container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .span__row {
+        grid-row-end: auto;
+        grid-column-end: auto;
+    }
+    .span__column-3 {
+        grid-column-end: auto;
+    }
+    .r_container {
+        width: 95% !important;
+    }
+}
+
+
+@media screen and (max-width: 450px) {
+    .col {
+        flex-direction: column !important;
+    }
+    .bc__row {
+        flex-direction: column !important;
+    }
+    .bc__row div {
+        width: 100%;
+    }
+}

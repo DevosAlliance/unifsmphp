@@ -1,0 +1,79 @@
+@import "styles.css";
+
+.spacing {
+    margin: 1rem 0;
+    padding: 1rem 0;
+}
+
+.cards__img img {
+    width: 285px;
+    height: 300px;
+}
+
+.cards__img {
+    max-width: 300px;
+    height: 450px;
+    max-height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 30px;
+}
+
+.cards__img div {
+    max-height: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+}
+
+.cards__img p, .cards__img span, .spacing p {
+    font-weight: 300;
+    text-align: center;
+}
+
+.cards__img p, .spacing p {
+    font-size: var(--size-i);
+}
+
+.cards__img p {
+    text-transform: uppercase;
+}
+
+.cards__img span {
+    font-size: var(--font-link);
+}
+
+.cards__img div:nth-child(2) {
+    align-self: flex-start;
+}
+
+@media screen and (max-width: 769px) {
+    .cards__img img {
+        width: 200px;
+        height: 220px;
+    }
+    
+    .cards__img {
+        max-width: 300px;
+        height: 350px;
+        gap: 20px;
+    }
+    
+    .cards__img div {
+        max-height: 330px;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .cards__img {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+    }
+    .cards__img div:nth-child(2) {
+        align-self: center;
+    }
+}

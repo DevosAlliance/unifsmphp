@@ -1,0 +1,19 @@
+/*
+Theme Name: UNIFSM
+Theme URI: https://unifsm.edu.br/
+Author: Devos Tecnologia
+Author URI: https://devosalliance.com
+Description: Tema Personalizado para o UNIFSM
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: unifsm
+*/
+
+#wpadminbar {
+    display: block !important;
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+    z-index: 99999999 !important;
+}
