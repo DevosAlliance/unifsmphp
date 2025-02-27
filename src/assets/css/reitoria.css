@@ -107,3 +107,7 @@
  .btn:hover {
      background-color: #2b6cb0;
  }
+
+ .titulo-setor {
+    margin: 2rem 0;
+ }
