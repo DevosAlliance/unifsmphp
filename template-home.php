@@ -68,10 +68,10 @@ get_header();
     <!-- Notícias -->
     <section class="section news">
         <div class="new__container">
-            <div class="t__new">
-                <h5 class="t__title">Acontece na UNIFSM</h5>
-                <div class="t__news__btn">
-                <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">Mais Notícias <i class="ri-arrow-right-up-line"></i></a>
+            <div class="title__container">
+                <h5 class="title">Acontece na UNIFSM</h5>
+                <div>
+                <a class="a__yellow" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">Mais Notícias <i class="ri-arrow-right-up-line"></i></a>
                 </div>
             </div>
             <div class="b__new">
