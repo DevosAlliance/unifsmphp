@@ -223,6 +223,46 @@ function carregar_css_universidade() {
 }
 add_action('wp_enqueue_scripts', 'carregar_css_universidade');
 
+function carregar_css_cpa() {
+    if (is_page_template('template-cpa.php')) {
+        wp_enqueue_style('home-style', get_template_directory_uri() . '/src/assets/css/style.css');
+        wp_enqueue_style('top-nav', get_template_directory_uri() . '/src/assets/css/top-nav.css');
+        wp_enqueue_style('header', get_template_directory_uri() . '/src/assets/css/header.css');
+        wp_enqueue_style('footer', get_template_directory_uri() . '/src/assets/css/footer.css');
+        wp_enqueue_style('b-footer', get_template_directory_uri() . '/src/assets/css/b-footer.css');
+        wp_enqueue_style('new', get_template_directory_uri() . '/src/assets/css/new.css');
+        wp_enqueue_style('about-us', get_template_directory_uri() . '/src/assets/css/about-us.css');
+        wp_enqueue_style('cpa', get_template_directory_uri() . '/src/assets/css/cpa.css');
+        wp_enqueue_style('page3', get_template_directory_uri() . '/src/assets/css/page3.css');
+        wp_enqueue_style('course', get_template_directory_uri() . '/src/assets/css/course.css');
+    }
+}
+add_action('wp_enqueue_scripts', 'carregar_css_cpa');
 
+function carregar_css_biblioteca() {
+    if (is_page_template('template-biblioteca.php')) {
+        wp_enqueue_style('home-style', get_template_directory_uri() . '/src/assets/css/style.css');
+        wp_enqueue_style('top-nav', get_template_directory_uri() . '/src/assets/css/top-nav.css');
+        wp_enqueue_style('header', get_template_directory_uri() . '/src/assets/css/header.css');
+        wp_enqueue_style('footer', get_template_directory_uri() . '/src/assets/css/footer.css');
+        wp_enqueue_style('b-footer', get_template_directory_uri() . '/src/assets/css/b-footer.css');
+        wp_enqueue_style('biblioteca', get_template_directory_uri() . '/src/assets/css/biblioteca.css');
+    }
+}
+add_action('wp_enqueue_scripts', 'carregar_css_biblioteca');
+
+
+function carregar_css_reitoria() {
+    if (is_page_template('template-reitoria.php')) {
+        wp_enqueue_style('home-style', get_template_directory_uri() . '/src/assets/css/style.css');
+        wp_enqueue_style('top-nav', get_template_directory_uri() . '/src/assets/css/top-nav.css');
+        wp_enqueue_style('header', get_template_directory_uri() . '/src/assets/css/header.css');
+        wp_enqueue_style('footer', get_template_directory_uri() . '/src/assets/css/footer.css');
+        wp_enqueue_style('b-footer', get_template_directory_uri() . '/src/assets/css/b-footer.css');
+        wp_enqueue_style('about-us', get_template_directory_uri() . '/src/assets/css/about-us.css');
+        wp_enqueue_style('page3', get_template_directory_uri() . '/src/assets/css/page3.css');
+    }
+}
+add_action('wp_enqueue_scripts', 'carregar_css_reitoria');
 
 ?>
