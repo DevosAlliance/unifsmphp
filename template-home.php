@@ -24,28 +24,19 @@ get_header();
             <div class="slider-container">
                 <div class="slider">
                     <?php
-                    $args = array(
-                        'post_type' => 'banner',
-                        'posts_per_page' => -1
-                    );
-                    $query = new WP_Query($args);
+                    // Obtém a galeria de fotos da página de opções
+                    $banners = get_field('fotos', 'option');
 
-                    if ($query->have_posts()) :
-                        while ($query->have_posts()) : $query->the_post();
-                            $link = get_post_meta(get_the_ID(), 'link', true);
+                    if (!empty($banners)) :
+                        foreach ($banners as $banner) :
+                            $image_url = esc_url($banner['url']);
+                            $image_alt = esc_attr($banner['alt'] ?: 'Banner');
                             ?>
                             <div class="slide">
-                                <a href="<?php echo esc_url($link); ?>" target="_blank">
-                                    <?php if (has_post_thumbnail()) : ?>
-                                        <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>" />
-                                    <?php else : ?>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/default-banner.png" alt="Banner Padrão" />
-                                    <?php endif; ?>
-                                </a>
+                                <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>" />
                             </div>
                             <?php
-                        endwhile;
-                        wp_reset_postdata();
+                        endforeach;
                     else :
                         echo '<p>Nenhum banner encontrado.</p>';
                     endif;
@@ -55,10 +46,11 @@ get_header();
                 <button class="next">&#10095;</button>
                 <div class="dots-container">
                     <?php
-                    $banners = $query->post_count;
-                    for ($i = 0; $i < $banners; $i++) {
-                        echo '<span class="dot" data-index="' . $i . '"></span>';
-                    }
+                    if (!empty($banners)) :
+                        foreach ($banners as $index => $banner) :
+                            echo '<span class="dot" data-index="' . $index . '"></span>';
+                        endforeach;
+                    endif;
                     ?>
                 </div>
             </div>

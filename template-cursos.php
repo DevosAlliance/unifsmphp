@@ -89,26 +89,21 @@ get_header();
                             $query = new WP_Query($args);
                             $cursos = [];
 
-                            // Reorganiza para colocar 'Medicina' no topo
+                            // Preenche a lista de cursos sem qualquer reordenação
                             if ($query->have_posts()) :
                                 while ($query->have_posts()) : $query->the_post();
-                                    $curso = array(
+                                    $cursos[] = array(
                                         'title'      => get_the_title(),
                                         'link'       => get_permalink(),
                                         'tipo'       => get_field('tipo') ?: 'Não informado', // Evita undefined
                                         'semestres'  => get_field('semestres') ?: 'Não informado',
                                         'periodo'    => get_field('periodo') ?: 'Não informado',
                                     );
-
-                                    if ($curso['title'] === 'Medicina') {
-                                        array_unshift($cursos, $curso); // Move Medicina para o topo
-                                    } else {
-                                        $cursos[] = $curso;
-                                    }
                                 endwhile;
                                 wp_reset_postdata();
                             endif;
                         ?>
+
                         <div class="g__content <?php echo $index === 0 ? 'active' : ''; ?>">
                             <ul class="cards">
                                 <?php if (!empty($cursos)) :

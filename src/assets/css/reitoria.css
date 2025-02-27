@@ -1,0 +1,109 @@
+ body {
+     font-family: 'Roboto', sans-serif;
+     background-color: #f8f5f2;
+     color: #4a4a4a;
+     margin: 0;
+     padding: 0;
+ }
+
+ .container {
+     max-width: 1200px;
+     margin: 0 auto;
+     padding: 16px;
+ }
+
+ .text-center {
+     text-align: center;
+ }
+
+ .text-gray-600 {
+     color: #718096;
+ }
+
+ .font-bold {
+     font-weight: 700;
+ }
+
+ .mb-8 {
+     margin-bottom: 2rem;
+ }
+
+ .spacing {
+     margin: 1rem 0;
+     padding: 1rem 0;
+ }
+
+ .cards__img img {
+     width: 100%;
+     height: auto;
+     border-radius: 8px;
+ }
+
+ .cards__img {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 30px;
+ }
+
+ .cards__img div {
+     max-width: 285px;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     gap: 3px;
+     background-color: white;
+     border-radius: 8px;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+     padding: 16px;
+ }
+
+ .cards__img p,
+ .cards__img span,
+ .spacing p {
+     font-weight: 300;
+     text-align: center;
+ }
+
+ .cards__img p,
+ .spacing p {
+     font-size: 1rem;
+ }
+
+ .cards__img p {
+     text-transform: uppercase;
+     font-weight: 700;
+ }
+
+ .cards__img span {
+     font-size: 0.875rem;
+ }
+
+ @media screen and (max-width: 769px) {
+     .cards__img div {
+         max-width: 200px;
+     }
+ }
+
+ @media screen and (max-width: 426px) {
+     .cards__img {
+         flex-direction: column;
+         align-items: center;
+     }
+ }
+
+ .btn {
+     display: inline-block;
+     background-color: #4299e1;
+     color: white;
+     padding: 10px 20px;
+     border-radius: 8px;
+     text-decoration: none;
+     font-weight: 700;
+     transition: background-color 0.3s;
+ }
+
+ .btn:hover {
+     background-color: #2b6cb0;
+ }
