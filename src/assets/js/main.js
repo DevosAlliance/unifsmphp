@@ -44,7 +44,6 @@ function updateClasses() {
 }
 
 updateClasses();
-
 window.addEventListener("resize", updateClasses);
 
 /*=============== SHOW MENU ===============*/
@@ -60,4 +59,36 @@ const showMenu = (toggleId, navId) => {
 
 showMenu("nav-toggle", "nav-menu");
 
+/*=============== DROPDOWN DELAY ===============*/
+let dropdownTimeout;
+const dropdownItems = document.querySelectorAll(".dropdown__item");
 
+dropdownItems.forEach(item => {
+    const menu = item.querySelector(".dropdown__menu");
+
+    if (menu) {
+        item.addEventListener("mouseenter", function () {
+            clearTimeout(dropdownTimeout); 
+            menu.style.opacity = "1";
+            menu.style.pointerEvents = "initial";
+        });
+
+        item.addEventListener("mouseleave", function () {
+            dropdownTimeout = setTimeout(() => {
+                menu.style.opacity = "0";
+                menu.style.pointerEvents = "none";
+            }, 500);
+        });
+
+        menu.addEventListener("mouseenter", function () {
+            clearTimeout(dropdownTimeout);
+        });
+
+        menu.addEventListener("mouseleave", function () {
+            dropdownTimeout = setTimeout(() => {
+                menu.style.opacity = "0";
+                menu.style.pointerEvents = "none";
+            }, 500);
+        });
+    }
+});
