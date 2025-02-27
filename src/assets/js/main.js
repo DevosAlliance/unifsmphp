@@ -59,16 +59,27 @@ const showMenu = (toggleId, navId) => {
 
 showMenu("nav-toggle", "nav-menu");
 
-/*=============== DROPDOWN DELAY ===============*/
+/*=============== DROPDOWN DELAY & AUTO CLOSE ===============*/
 let dropdownTimeout;
 const dropdownItems = document.querySelectorAll(".dropdown__item");
+
+function closeAllDropdowns() {
+    dropdownItems.forEach(item => {
+        const menu = item.querySelector(".dropdown__menu");
+        if (menu) {
+            menu.style.opacity = "0";
+            menu.style.pointerEvents = "none";
+        }
+    });
+}
 
 dropdownItems.forEach(item => {
     const menu = item.querySelector(".dropdown__menu");
 
     if (menu) {
         item.addEventListener("mouseenter", function () {
-            clearTimeout(dropdownTimeout); 
+            clearTimeout(dropdownTimeout);
+            closeAllDropdowns();
             menu.style.opacity = "1";
             menu.style.pointerEvents = "initial";
         });
