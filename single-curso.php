@@ -16,6 +16,7 @@ if (have_posts()) :
         $edital = get_field('edital');
         $sobre = get_field('sobre');
         $valor = get_field('valor');
+        $matriz_curricular = get_field('matriz_curricular');
 ?>
 
 
@@ -31,7 +32,7 @@ if (have_posts()) :
             <h6><?php echo esc_html($email); ?></h6>
           </div>
           <div class="courses__btns">
-            <button class="cs__btn">
+            <button class="cs__btn" onclick="window.open('<?php echo esc_html($matriz_curricular); ?>', '_blank')">>
               Matriz Curricular <span><?php echo esc_html($carga_horaria); ?> horas</span>
             </button>
             <button id="btnModal" class="cs__btn">Investimento</button>
