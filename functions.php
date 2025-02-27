@@ -208,6 +208,21 @@ function definir_template_para_pagina_de_posts($template) {
 }
 add_filter('template_include', 'definir_template_para_pagina_de_posts');
 
+function carregar_css_universidade() {
+    if (is_page_template('template-universidade.php')) {
+        wp_enqueue_style('home-style', get_template_directory_uri() . '/src/assets/css/style.css');
+        wp_enqueue_style('top-nav', get_template_directory_uri() . '/src/assets/css/top-nav.css');
+        wp_enqueue_style('header', get_template_directory_uri() . '/src/assets/css/header.css');
+        wp_enqueue_style('footer', get_template_directory_uri() . '/src/assets/css/footer.css');
+        wp_enqueue_style('b-footer', get_template_directory_uri() . '/src/assets/css/b-footer.css');
+        wp_enqueue_style('new', get_template_directory_uri() . '/src/assets/css/new.css');
+        wp_enqueue_style('about-us', get_template_directory_uri() . '/src/assets/css/about-us.css');
+        wp_enqueue_style('graduation', get_template_directory_uri() . '/src/assets/css/graduation.css');
+        wp_enqueue_style('university', get_template_directory_uri() . '/src/assets/css/university.css');
+    }
+}
+add_action('wp_enqueue_scripts', 'carregar_css_universidade');
+
 
 
 ?>

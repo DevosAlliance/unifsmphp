@@ -54,10 +54,6 @@
     text-align: justify;
 }
 
-.video__presentation {
-    height: 350px;
-}
-
 .accordion {
     width: 100%;
     position: relative;
@@ -202,8 +198,5 @@
     }
     .a__btns ul {
         gap: 0.5rem;
-    }
-    .video__presentation {
-        height: 200px;
     }
 }
