@@ -188,7 +188,10 @@ if (have_posts()) :
         </div>
 
           <div class="cta">
-            <h2>CTA</h2>
+            <a href="#">
+              <!--<img src="<?php echo esc_attr(get_field('cta', 'option')); ?>">-->
+              <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/cta2.png" alt="" />
+            </a>
           </div>
         </div>
       </section>
@@ -196,7 +199,8 @@ if (have_posts()) :
       <section class="section">
         <div class="div__container i__presentation">
           <div class="i__presentation__img">
-            <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/img-teste.png" alt="" />
+            <!--<img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/img-teste.png" alt="" />-->
+            <iframe width="100%" class="video__presentation" src="https://www.youtube.com/embed/WikgGoMZm7w" title="VESTIBULAR DE MEDICINA 2024.2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
           <div class="i__presentation__content">
             <h5>Estude na UNIFSM</h5>
