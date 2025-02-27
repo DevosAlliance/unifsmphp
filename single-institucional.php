@@ -24,7 +24,7 @@ if (have_posts()) :
     <section class="section">
         <div class="container">
             <div class="spacing">
-                <div class="text-center text-gray-600">
+                <div class="text-justify text-gray-600">
                     <?php echo wpautop(wp_kses_post(get_field('sobre') ?: "Nenhuma informação disponível.")); ?>
                 </div>
 
