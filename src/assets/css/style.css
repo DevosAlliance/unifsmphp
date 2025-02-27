@@ -83,6 +83,10 @@ a {
   color: var(--black) !important;
 }
 
+.text-justify {
+  text-align: justify;
+}
+
 .title::after {
   content: "";
   position: absolute;

@@ -64,8 +64,7 @@
  }
 
  .cards__img p,
- .cards__img span,
- .spacing p {
+ .cards__img span {
      font-weight: 300;
      text-align: center;
  }
