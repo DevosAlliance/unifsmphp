@@ -9,6 +9,7 @@ if (have_posts()) :
         $setores = get_field('setor'); // Repetidor de setores
         $existe_anexo = get_field('existe_anexo');
         $anexos = get_field('documentos'); // Repetidor de documentos
+        $links  = get_field('links');
 ?>
 <main class="main">
     <!-- Seção de Sobre -->
@@ -23,9 +24,10 @@ if (have_posts()) :
     <section class="section">
         <div class="container">
             <div class="spacing">
-                <p class="text-center text-gray-600">
-                    <?php echo esc_html($sobre ? $sobre : "Nenhuma informação disponível."); ?>
-                </p>
+                <div class="text-center text-gray-600">
+                    <?php echo wpautop(wp_kses_post(get_field('sobre') ?: "Nenhuma informação disponível.")); ?>
+                </div>
+
             </div>
         </div>
     </section>
@@ -60,25 +62,48 @@ if (have_posts()) :
     <?php endif; ?>
 
     <!-- Seção de Documentos -->
-    <?php if ($existe_anexo === 'Sim' && !empty($anexos)) : ?>
-        <section class="section">
-            <div class="container">
-                <h2 class="text-center text-2xl font-bold mb-8">Documentos</h2>
-                <div class="text-center">
-                    <?php 
-                    $count_docs = 0;
-                    foreach ($anexos as $anexo) : 
-                        $count_docs++;
-                    ?>
-                        <a class="btn" href="<?php echo esc_url($anexo['arquivo']['url']); ?>" target="_blank">
-                            <?php echo esc_html($anexo['nome']); ?>
-                        </a>
-                        <?php if ($count_docs % 3 == 0) echo '<div style="width: 100%;"></div>'; // Quebra a linha a cada 3 documentos ?>
-                    <?php endforeach; ?>
-                </div>
+    <?php if (!empty($anexos) || !empty($links)) : ?>
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center text-2xl font-bold mb-8">Documentos e Links</h2>
+            <div class="text-center">
+                <?php 
+                $count_items = 0;
+
+                // Exibir Documentos (Anexos)
+                if (!empty($anexos)) :
+                    foreach ($anexos as $anexo) :
+                        if (!empty($anexo['arquivo']['url']) && !empty($anexo['nome'])) :
+                            $count_items++;
+                ?>
+                            <a class="btn mb-2" href="<?php echo esc_url($anexo['arquivo']['url']); ?>" target="_blank">
+                                📄 <?php echo esc_html($anexo['nome']); ?>
+                            </a>
+                            <?php if ($count_items % 3 == 0) echo '<div style="width: 100%;"></div>'; // Quebra a linha a cada 3 itens ?>
+                <?php 
+                        endif;
+                    endforeach;
+                endif;
+
+                // Exibir Links Externos
+                if (!empty($links)) :
+                    foreach ($links as $link) :
+                        if (!empty($link['link']) && !empty($link['nome'])) :
+                            $count_items++;
+                ?>
+                            <a class="btn mb-2" href="<?php echo esc_url($link['link']); ?>" target="_blank">
+                                🔗 <?php echo esc_html($link['nome']); ?>
+                            </a>
+                            <?php if ($count_items % 3 == 0) echo '<div style="width: 100%;"></div>'; // Quebra a linha a cada 3 itens ?>
+                <?php 
+                        endif;
+                    endforeach;
+                endif;
+                ?>
             </div>
-        </section>
-    <?php endif; ?>
+        </div>
+    </section>
+<?php endif; ?>
 </main>
 
 <?php 

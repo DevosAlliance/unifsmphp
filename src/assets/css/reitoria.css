@@ -28,6 +28,10 @@
      margin-bottom: 2rem;
  }
 
+ .mb-2 {
+     margin-bottom: 1rem;
+ }
+
  .spacing {
      margin: 1rem 0;
      padding: 1rem 0;
@@ -111,3 +115,4 @@
  .titulo-setor {
     margin: 2rem 0;
  }
+
