@@ -123,76 +123,6 @@ function send_lead_email() {
     }
 }
 
-
-
-
-// css home
-
-function carregar_css_home_personalizada() {
-    if (is_page_template('template-home.php')) { 
-        wp_enqueue_style('owl.carousel2.min', get_template_directory_uri() . '/node_modules/owl.carousel/dist/assets/owl.carousel.min.css');
-        wp_enqueue_style('home-style', get_template_directory_uri() . '/src/assets/css/style.css');
-        wp_enqueue_style('top-nav', get_template_directory_uri() . '/src/assets/css/top-nav.css');
-        wp_enqueue_style('header', get_template_directory_uri() . '/src/assets/css/header.css');
-        wp_enqueue_style('slides', get_template_directory_uri() . '/src/assets/css/slides.css');
-        wp_enqueue_style('footer', get_template_directory_uri() . '/src/assets/css/footer.css');
-        wp_enqueue_style('b-footer', get_template_directory_uri() . '/src/assets/css/b-footer.css');
-        wp_enqueue_style('new', get_template_directory_uri() . '/src/assets/css/new.css');
-        wp_enqueue_style('infos', get_template_directory_uri() . '/src/assets/css/infos.css');
-        wp_enqueue_style('graduation', get_template_directory_uri() . '/src/assets/css/graduation.css');
-        wp_enqueue_style('postgraduate', get_template_directory_uri() . '/src/assets/css/postgraduate.css');
-        wp_enqueue_style('about-us', get_template_directory_uri() . '/src/assets/css/about-us.css');
-        wp_enqueue_style('contact', get_template_directory_uri() . '/src/assets/css/contact.css');
-    }
-}
-add_action('wp_enqueue_scripts', 'carregar_css_home_personalizada');
-
-// css single curso
-function carregar_css_single_curso() {
-    if (is_singular('curso')) { 
-        wp_enqueue_style('home-style', get_template_directory_uri() . '/src/assets/css/style.css');
-        wp_enqueue_style('top-nav', get_template_directory_uri() . '/src/assets/css/top-nav.css');
-        wp_enqueue_style('header', get_template_directory_uri() . '/src/assets/css/header.css');
-        wp_enqueue_style('footer', get_template_directory_uri() . '/src/assets/css/footer.css');
-        wp_enqueue_style('b-footer', get_template_directory_uri() . '/src/assets/css/b-footer.css');
-        wp_enqueue_style('courses', get_template_directory_uri() . '/src/assets/css/courses.css');
-        wp_enqueue_style('infos', get_template_directory_uri() . '/src/assets/css/infos.css');
-        wp_enqueue_style('course', get_template_directory_uri() . '/src/assets/css/course.css');
-        wp_enqueue_style('modal', get_template_directory_uri() . '/src/assets/css/modal.css');
-        wp_enqueue_style('new', get_template_directory_uri() . '/src/assets/css/new.css');
-    }
-}
-add_action('wp_enqueue_scripts', 'carregar_css_single_curso');
-
-function carregar_css_cursos() {
-    if (is_page_template('template-cursos.php')) {
-        wp_enqueue_style('home-style', get_template_directory_uri() . '/src/assets/css/style.css');
-        wp_enqueue_style('top-nav', get_template_directory_uri() . '/src/assets/css/top-nav.css');
-        wp_enqueue_style('header', get_template_directory_uri() . '/src/assets/css/header.css');
-        wp_enqueue_style('footer', get_template_directory_uri() . '/src/assets/css/footer.css');
-        wp_enqueue_style('b-footer', get_template_directory_uri() . '/src/assets/css/b-footer.css');
-        wp_enqueue_style('infos', get_template_directory_uri() . '/src/assets/css/infos.css');
-        wp_enqueue_style('graduation', get_template_directory_uri() . '/src/assets/css/graduation.css');
-        wp_enqueue_style('courses', get_template_directory_uri() . '/src/assets/css/courses.css');
-    }
-}
-add_action('wp_enqueue_scripts', 'carregar_css_cursos');
-
-function carregar_css_noticia() {
-    if (is_single()) { 
-        wp_enqueue_style('home-style', get_template_directory_uri() . '/src/assets/css/style.css');
-        wp_enqueue_style('top-nav', get_template_directory_uri() . '/src/assets/css/top-nav.css');
-        wp_enqueue_style('header', get_template_directory_uri() . '/src/assets/css/header.css');
-        wp_enqueue_style('footer', get_template_directory_uri() . '/src/assets/css/footer.css');
-        wp_enqueue_style('b-footer', get_template_directory_uri() . '/src/assets/css/b-footer.css');
-        wp_enqueue_style('infos', get_template_directory_uri() . '/src/assets/css/infos.css');
-        wp_enqueue_style('graduation', get_template_directory_uri() . '/src/assets/css/graduation.css');
-        wp_enqueue_style('courses', get_template_directory_uri() . '/src/assets/css/courses.css');
-    }
-}
-add_action('wp_enqueue_scripts', 'carregar_css_noticia');
-
-
 function definir_template_para_pagina_de_posts($template) {
     if (is_home()) { // Verifica se é a página de posts (Notícias)
         $pagina_posts = get_option('page_for_posts'); // Obtém o ID da página de posts
@@ -207,74 +137,113 @@ function definir_template_para_pagina_de_posts($template) {
 }
 add_filter('template_include', 'definir_template_para_pagina_de_posts');
 
-function carregar_css_universidade() {
-    if (is_page_template('template-universidade.php')) {
-        wp_enqueue_style('home-style', get_template_directory_uri() . '/src/assets/css/style.css');
-        wp_enqueue_style('top-nav', get_template_directory_uri() . '/src/assets/css/top-nav.css');
-        wp_enqueue_style('header', get_template_directory_uri() . '/src/assets/css/header.css');
-        wp_enqueue_style('footer', get_template_directory_uri() . '/src/assets/css/footer.css');
-        wp_enqueue_style('b-footer', get_template_directory_uri() . '/src/assets/css/b-footer.css');
-        wp_enqueue_style('new', get_template_directory_uri() . '/src/assets/css/new.css');
-        wp_enqueue_style('about-us', get_template_directory_uri() . '/src/assets/css/about-us.css');
-        wp_enqueue_style('graduation', get_template_directory_uri() . '/src/assets/css/graduation.css');
-        wp_enqueue_style('university', get_template_directory_uri() . '/src/assets/css/university.css');
+function carregar_css_otimizado() {
+    $estilos_comuns = [
+        'home-style' => '/src/assets/css/style.css',
+        'top-nav' => '/src/assets/css/top-nav.css',
+        'header' => '/src/assets/css/header.css',
+        'footer' => '/src/assets/css/footer.css',
+        'b-footer' => '/src/assets/css/b-footer.css',
+    ];
+
+    $estilos_por_pagina = [
+        'template-home.php' => [
+            'slides' => '/src/assets/css/slides.css',
+            'new' => '/src/assets/css/new.css',
+            'infos' => '/src/assets/css/infos.css',
+            'graduation' => '/src/assets/css/graduation.css',
+            'postgraduate' => '/src/assets/css/postgraduate.css',
+            'about-us' => '/src/assets/css/about-us.css',
+            'contact' => '/src/assets/css/contact.css',
+        ],
+        'template-cursos.php' => [
+            'courses' => '/src/assets/css/courses.css',
+            'graduation' => '/src/assets/css/graduation.css',
+            'infos' => '/src/assets/css/infos.css',
+        ],
+        'template-universidade.php' => [
+            'university' => '/src/assets/css/university.css',
+            'new' => '/src/assets/css/new.css',
+            'about-us' => '/src/assets/css/about-us.css',
+            'graduation' => '/src/assets/css/graduation.css',
+        ],
+        'template-cpa.php' => [
+            'cpa' => '/src/assets/css/cpa.css',
+            'new' => '/src/assets/css/new.css',
+            'about-us' => '/src/assets/css/about-us.css',
+            'page3' => '/src/assets/css/page3.css',
+            'course' => '/src/assets/css/course.css',
+        ],
+        'template-biblioteca.php' => [
+            'biblioteca' => '/src/assets/css/biblioteca.css',
+        ],
+        'template-reitoria.php' => [
+            'reitoria' => '/src/assets/css/reitoria.css',
+            'about-us' => '/src/assets/css/about-us.css',
+        ],
+        'institucional' => [
+            'reitoria' => '/src/assets/css/reitoria.css',
+            'about-us' => '/src/assets/css/about-us.css',
+        ]
+    ];
+
+    // Registra estilos comuns
+    foreach ($estilos_comuns as $handle => $path) {
+        wp_enqueue_style($handle, get_template_directory_uri() . $path);
+    }
+
+    // Registra estilos específicos por página
+    foreach ($estilos_por_pagina as $template => $styles) {
+        if (is_page_template($template) || is_singular($template)) {
+            foreach ($styles as $handle => $path) {
+                wp_enqueue_style($handle, get_template_directory_uri() . $path);
+            }
+        }
     }
 }
-add_action('wp_enqueue_scripts', 'carregar_css_universidade');
+add_action('wp_enqueue_scripts', 'carregar_css_otimizado');
 
-function carregar_css_cpa() {
-    if (is_page_template('template-cpa.php')) {
-        wp_enqueue_style('home-style', get_template_directory_uri() . '/src/assets/css/style.css');
-        wp_enqueue_style('top-nav', get_template_directory_uri() . '/src/assets/css/top-nav.css');
-        wp_enqueue_style('header', get_template_directory_uri() . '/src/assets/css/header.css');
-        wp_enqueue_style('footer', get_template_directory_uri() . '/src/assets/css/footer.css');
-        wp_enqueue_style('b-footer', get_template_directory_uri() . '/src/assets/css/b-footer.css');
-        wp_enqueue_style('new', get_template_directory_uri() . '/src/assets/css/new.css');
-        wp_enqueue_style('about-us', get_template_directory_uri() . '/src/assets/css/about-us.css');
-        wp_enqueue_style('cpa', get_template_directory_uri() . '/src/assets/css/cpa.css');
-        wp_enqueue_style('page3', get_template_directory_uri() . '/src/assets/css/page3.css');
-        wp_enqueue_style('course', get_template_directory_uri() . '/src/assets/css/course.css');
+
+// configurações de melhoria
+function converter_para_webp($file) {
+    // Verifica se a extensão do arquivo é suportada
+    $extensoes_suportadas = ['jpg', 'jpeg', 'png'];
+    $file_type = pathinfo($file['file'], PATHINFO_EXTENSION);
+
+    if (!in_array(strtolower($file_type), $extensoes_suportadas)) {
+        return $file; // Se não for uma imagem suportada, retorna sem modificar
     }
-}
-add_action('wp_enqueue_scripts', 'carregar_css_cpa');
 
-function carregar_css_biblioteca() {
-    if (is_page_template('template-biblioteca.php')) {
-        wp_enqueue_style('home-style', get_template_directory_uri() . '/src/assets/css/style.css');
-        wp_enqueue_style('top-nav', get_template_directory_uri() . '/src/assets/css/top-nav.css');
-        wp_enqueue_style('header', get_template_directory_uri() . '/src/assets/css/header.css');
-        wp_enqueue_style('footer', get_template_directory_uri() . '/src/assets/css/footer.css');
-        wp_enqueue_style('b-footer', get_template_directory_uri() . '/src/assets/css/b-footer.css');
-        wp_enqueue_style('biblioteca', get_template_directory_uri() . '/src/assets/css/biblioteca.css');
+    // Obtém o caminho do arquivo original
+    $image = new Imagick($file['file']);
+    $image->setImageFormat('webp'); // Define o formato para WebP
+
+    // Define qualidade da imagem WebP (padrão: 80)
+    $image->setImageCompressionQuality(80);
+
+    // Salva a nova imagem no mesmo diretório, com extensão .webp
+    $novo_nome = preg_replace('/\.(jpg|jpeg|png)$/i', '.webp', $file['file']);
+    $image->writeImage($novo_nome);
+    $image->destroy();
+
+    // Remove a imagem original após conversão (opcional)
+    unlink($file['file']);
+
+    // Atualiza o caminho do arquivo para apontar para o WebP
+    $file['file'] = $novo_nome;
+    $file['type'] = 'image/webp';
+
+    return $file;
+}
+add_filter('wp_handle_upload', 'converter_para_webp');
+
+function adicionar_lazy_loading($content) {
+    if (!is_admin()) {
+        $content = preg_replace('/<img(.*?)src=/', '<img$1loading="lazy" src=', $content);
     }
+    return $content;
 }
-add_action('wp_enqueue_scripts', 'carregar_css_biblioteca');
+add_filter('the_content', 'adicionar_lazy_loading');
 
-
-function carregar_css_reitoria() {
-    if (is_page_template('template-reitoria.php')) {
-        wp_enqueue_style('home-style', get_template_directory_uri() . '/src/assets/css/style.css');
-        wp_enqueue_style('top-nav', get_template_directory_uri() . '/src/assets/css/top-nav.css');
-        wp_enqueue_style('header', get_template_directory_uri() . '/src/assets/css/header.css');
-        wp_enqueue_style('footer', get_template_directory_uri() . '/src/assets/css/footer.css');
-        wp_enqueue_style('b-footer', get_template_directory_uri() . '/src/assets/css/b-footer.css');
-        wp_enqueue_style('about-us', get_template_directory_uri() . '/src/assets/css/about-us.css');
-        wp_enqueue_style('reitoria', get_template_directory_uri() . '/src/assets/css/reitoria.css');
-    }
-}
-add_action('wp_enqueue_scripts', 'carregar_css_reitoria');
-
-function carregar_css_institucional() {
-    if (is_singular('institucional')) {
-        wp_enqueue_style('home-style', get_template_directory_uri() . '/src/assets/css/style.css');
-        wp_enqueue_style('top-nav', get_template_directory_uri() . '/src/assets/css/top-nav.css');
-        wp_enqueue_style('header', get_template_directory_uri() . '/src/assets/css/header.css');
-        wp_enqueue_style('footer', get_template_directory_uri() . '/src/assets/css/footer.css');
-        wp_enqueue_style('b-footer', get_template_directory_uri() . '/src/assets/css/b-footer.css');
-        wp_enqueue_style('about-us', get_template_directory_uri() . '/src/assets/css/about-us.css');
-        wp_enqueue_style('reitoria', get_template_directory_uri() . '/src/assets/css/reitoria.css');
-    }
-}
-add_action('wp_enqueue_scripts', 'carregar_css_institucional');
 
 ?>
