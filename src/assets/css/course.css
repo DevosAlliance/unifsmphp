@@ -1,4 +1,4 @@
-@import "styles.css";
+@import 'style.css';
 
 .courses__title h4 {
     font-size: var(--size-title);
