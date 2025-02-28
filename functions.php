@@ -192,6 +192,7 @@ function carregar_css_otimizado() {
             'courses' => '/src/assets/css/courses.css',
             'graduation' => '/src/assets/css/graduation.css',
             'infos' => '/src/assets/css/infos.css',
+            'courses' => '/src/assets/css/courses.css',
         ],
         'template-universidade.php' => [
             'university' => '/src/assets/css/university.css',
@@ -216,6 +217,13 @@ function carregar_css_otimizado() {
         'institucional' => [
             'reitoria' => '/src/assets/css/reitoria.css',
             'about-us' => '/src/assets/css/about-us.css',
+        ],
+        'curso' => [
+            'course' => '/src/assets/css/course.css',
+            'modal' => '/src/assets/css/modal.css',
+            'new' => '/src/assets/css/new.css',
+            'infos' => '/src/assets/css/infos.css',
+            'courses' => '/src/assets/css/courses.css',
         ]
     ];
 
