@@ -137,6 +137,38 @@ function definir_template_para_pagina_de_posts($template) {
 }
 add_filter('template_include', 'definir_template_para_pagina_de_posts');
 
+function minificar_css($file_path) {
+    // Caminho real do arquivo no servidor
+    $full_path = get_template_directory() . $file_path;
+
+    // Caminho do arquivo minificado
+    $minified_path = str_replace('.css', '.min.css', $full_path);
+
+    // Caminho relativo para o navegador carregar o arquivo minificado
+    $minified_url = str_replace('.css', '.min.css', $file_path);
+
+    // Se o arquivo minificado já existir e for mais recente que o original, usá-lo
+    if (file_exists($minified_path) && filemtime($minified_path) >= filemtime($full_path)) {
+        return $minified_url;
+    }
+
+    // Minificação do CSS
+    if (file_exists($full_path)) {
+        $css = file_get_contents($full_path);
+        $css = preg_replace('/\s+/', ' ', $css); // Remove espaços extras
+        $css = preg_replace('/\/\*.*?\*\//s', '', $css); // Remove comentários
+        $css = str_replace([' : ', ' {', '{ ', ' }', '} ', ' ;', '; '], [':', '{', '{', '}', '}', ';', ';'], $css); // Remove espaços desnecessários
+
+        // Salva o arquivo minificado
+        file_put_contents($minified_path, $css);
+
+        return $minified_url;
+    }
+
+    // Se o arquivo original não existir, retorna o caminho original
+    return $file_path;
+}
+
 function carregar_css_otimizado() {
     $estilos_comuns = [
         'home-style' => '/src/assets/css/style.css',
@@ -187,22 +219,21 @@ function carregar_css_otimizado() {
         ]
     ];
 
-    // Registra estilos comuns
+    // Registra estilos comuns (já minificados)
     foreach ($estilos_comuns as $handle => $path) {
-        wp_enqueue_style($handle, get_template_directory_uri() . $path);
+        wp_enqueue_style($handle, get_template_directory_uri() . minificar_css($path));
     }
 
-    // Registra estilos específicos por página
+    // Registra estilos específicos por página (já minificados)
     foreach ($estilos_por_pagina as $template => $styles) {
         if (is_page_template($template) || is_singular($template)) {
             foreach ($styles as $handle => $path) {
-                wp_enqueue_style($handle, get_template_directory_uri() . $path);
+                wp_enqueue_style($handle, get_template_directory_uri() . minificar_css($path));
             }
         }
     }
 }
 add_action('wp_enqueue_scripts', 'carregar_css_otimizado');
-
 
 // configurações de melhoria
 function converter_para_webp($file) {
