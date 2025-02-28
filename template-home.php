@@ -16,7 +16,12 @@ get_header();
 <!-- Arquivo JS do Owl Carousel -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
-
+<style>
+    .pg__card {
+        background-image: url('<?php echo get_template_directory_uri();?>/src/assets/images/card-teste.png');
+    }
+    
+</style>
 
 <main class="main">
     <section class="section slides">
