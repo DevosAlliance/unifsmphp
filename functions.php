@@ -131,7 +131,6 @@ function send_lead_email() {
 function carregar_css_home_personalizada() {
     if (is_page_template('template-home.php')) { 
         wp_enqueue_style('owl.carousel2.min', get_template_directory_uri() . '/node_modules/owl.carousel/dist/assets/owl.carousel.min.css');
-        wp_enqueue_style('owl.carousel.min', get_template_directory_uri() . '/bower_components/owl.carousel/dist/assets/owl.carousel.min.css');
         wp_enqueue_style('home-style', get_template_directory_uri() . '/src/assets/css/style.css');
         wp_enqueue_style('top-nav', get_template_directory_uri() . '/src/assets/css/top-nav.css');
         wp_enqueue_style('header', get_template_directory_uri() . '/src/assets/css/header.css');
