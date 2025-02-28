@@ -4,23 +4,6 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title><?php wp_title('|', true, 'right'); ?> <?php bloginfo('name'); ?></title>
-        <!-- Remix Icon -->
-        <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
-        integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-        />
-        <?php wp_head(); ?>
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/src/assets/css/style.css" />
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/src/assets/css/top-nav.css" />
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/src/assets/css/header.css" />
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/src/assets/css/footer.css" />
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/src/assets/css/b-footer.css" />
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/src/assets/css/new.css" />
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/src/assets/css/news.css" />
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/src/assets/css/courses.css" />
 
         <!-- Meta SEO -->
         <meta name="description" content="<?php bloginfo('description'); ?>">
@@ -28,6 +11,51 @@
         <meta name="keywords" content="Faculdade Santa Maria, FSM, Cajazeiras, ensino superior, cursos de graduação, pós-graduação, faculdade na Paraíba">
         <meta name="author" content="Devos Tecnologia">
         <meta name="robots" content="index, follow">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="<?php wp_title('|', true, 'right'); ?>">
+        <meta property="og:description" content="<?php bloginfo('description'); ?>">
+        <meta property="og:image" content="https://unifsm.edu.br/wp-content/uploads/2023/01/logounifsm2.png">
+        <meta property="og:url" content="https://unifsm.edu.br/">
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="<?php wp_title('|', true, 'right'); ?>">
+        <meta name="twitter:description" content="<?php bloginfo('description'); ?>">
+        <meta name="twitter:image" content="https://unifsm.edu.br/wp-content/uploads/2023/01/logounifsm2.png">
+
+        <!-- Preload (Melhora Performance) -->
+        <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/src/assets/css/style.css" as="style">
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+        <!-- CSS Principal -->
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/src/assets/css/style.css" />
+
+        <?php wp_head(); ?>
+        <!-- Carregamento Dinâmico de CSS (Evita Bloqueio de Renderização) -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var styles = [
+                    "top-nav", "header", "footer", "b-footer", "new", "news", "courses"
+                ];
+                styles.forEach(function(sheet) {
+                    var link = document.createElement("link");
+                    link.rel = "stylesheet";
+                    link.href = "<?php echo get_template_directory_uri(); ?>/src/assets/css/" + sheet + ".css";
+                    document.head.appendChild(link);
+                });
+            });
+        </script>
+
+        <!-- Remix Icon (compreensão melhorada de cache e segurança) -->
+        <link 
+            rel="stylesheet" 
+            href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" 
+            integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" 
+            crossorigin="anonymous" 
+            referrerpolicy="no-referrer"
+        />
 
         <!-- JSON-LD  -->
         <script type="application/ld+json">
