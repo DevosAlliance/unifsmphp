@@ -115,7 +115,7 @@ if (have_posts()) :
                 <div class="a__advisor">
                     <div class="a__img">
                         <img src="<?php echo esc_url($foto_coordenador ?: get_template_directory_uri() . '/src/assets/images/orientador.png'); ?>" 
-                            alt="<?php echo esc_attr($nome_coordenador); ?>" />
+                            alt="<?php echo esc_attr($nome_coordenador); ?>"  loading="lazy"/>
                     </div>
                     <div class="a__about">
                         <div class="a__name">
@@ -190,7 +190,7 @@ if (have_posts()) :
           <div class="cta">
             <a href="#">
               <!--<img src="<?php echo esc_attr(get_field('cta', 'option')); ?>">-->
-              <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/cta2.png" alt="" />
+              <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/cta2.png" alt=""  loading="lazy"/>
             </a>
           </div>
         </div>
@@ -221,7 +221,7 @@ if (have_posts()) :
       <div class="modal__header">
         <div class="mh_title">
           <div class="mh_logo">
-            <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/logo-modal.png" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/logo-modal.png" alt=""  loading="lazy"/>
           </div>
           <div>
             <h5>Investimento</h5>
@@ -271,7 +271,7 @@ if (have_posts()) :
     <div class="modal__header">
       <div class="mh_title">
         <div class="mh_logo">
-          <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/logo-modal.png" alt="" />
+          <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/logo-modal.png" alt=""  loading="lazy"/>
         </div>
         <div>
           <h5>Investimento</h5>

@@ -45,7 +45,7 @@ get_header();
             <!-- Imagem Destacada -->
             <?php if (has_post_thumbnail()) : ?>
                 <div class="n__img">
-                    <img src="<?php echo get_the_post_thumbnail_url(null, 'full'); ?>" alt="<?php the_title(); ?>" />
+                    <img src="<?php echo get_the_post_thumbnail_url(null, 'full'); ?>" alt="<?php the_title(); ?>" loading="lazy" />
                 </div>
             <?php endif; ?>
 

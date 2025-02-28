@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title><?php bloginfo('name'); ?></title>
+        <title><?php wp_title('|', true, 'right'); ?> <?php bloginfo('name'); ?></title>
         <!-- Remix Icon -->
         <link
         rel="stylesheet"
@@ -21,6 +21,43 @@
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/src/assets/css/new.css" />
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/src/assets/css/news.css" />
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/src/assets/css/courses.css" />
+
+        <!-- Meta SEO -->
+        <meta name="description" content="<?php bloginfo('description'); ?>">
+        <meta name="description" content="A Faculdade Santa Maria (FSM) é referência em ensino superior no Sertão Paraibano, oferecendo cursos de graduação e pós-graduação em Saúde, Humanas e Ciências Sociais.">
+        <meta name="keywords" content="Faculdade Santa Maria, FSM, Cajazeiras, ensino superior, cursos de graduação, pós-graduação, faculdade na Paraíba">
+        <meta name="author" content="Devos Tecnologia">
+        <meta name="robots" content="index, follow">
+
+        <!-- JSON-LD  -->
+        <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "CollegeOrUniversity",
+        "name": "Faculdade Santa Maria",
+        "url": "https://unifsm.edu.br/",
+        "logo": "https://unifsm.edu.br/wp-content/uploads/2023/01/logounifsm2.png",
+        "sameAs": [
+            "https://www.youtube.com/@UNIFSMOFICIAL",
+            "https://www.instagram.com/unifsmoficial/",
+            "https://www.tiktok.com/@unifsmoficial"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "BR 230 Km 504",
+            "addressLocality": "Cajazeiras",
+            "addressRegion": "PB",
+            "postalCode": "58900-000",
+            "addressCountry": "BR"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+55-83-3531-1346",
+            "email": "marketing@unifsm.edu.br",
+            "contactType": "customer service"
+        }
+        }
+        </script>
     </head>
 
     <style>
@@ -119,7 +156,7 @@
             <nav class="nav">
                 <div class="nav__data">
                     <a href="<?php echo esc_url(home_url('/')); ?>" class="nav__logo">
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/logo.png" alt="Logo" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/logo.png" alt="Logo"  loading="lazy"/>
                     </a>
                     <div class="nav__menu" id="nav-menu">
                         <ul class="nav__list">
@@ -185,7 +222,7 @@
                                     // Adiciona a logo secundária no meio do menu
                                     if ($count == $mid) {
                                         echo '<a href="' . esc_url(home_url('/')) . '" class="nav__logo2">';
-                                        echo '<img src="' . get_template_directory_uri() . '/src/assets/images/logo.png" alt="Logo">';
+                                        echo '<img src="' . get_template_directory_uri() . '/src/assets/images/logo.png" alt="Logo" loading="lazy">';
                                         echo '</a>';
                                     }
                                 }
@@ -249,3 +286,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 </script>
+
+
+

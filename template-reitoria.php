@@ -40,7 +40,7 @@ get_header();
       </h2>
      <div class="cards__img">
       <div>
-       <img alt="Ana Costa Goldfarb" src="<?php echo get_template_directory_uri(); ?>/src/assets/images/orientador.png"/>
+       <img alt="Ana Costa Goldfarb" src="<?php echo get_template_directory_uri(); ?>/src/assets/images/orientador.png" loading="lazy"/>
        <p>
         Ana Costa Goldfarb
        </p>
@@ -49,7 +49,7 @@ get_header();
        </span>
       </div>
       <div>
-       <img alt="Silvania Lira Braga Ramalho" src="<?php echo get_template_directory_uri(); ?>/src/assets/images/orientador.png"/>
+       <img alt="Silvania Lira Braga Ramalho" src="<?php echo get_template_directory_uri(); ?>/src/assets/images/orientador.png" loading="lazy"/>
        <p>
         Silvania Lira Braga Ramalho
        </p>
@@ -64,7 +64,7 @@ get_header();
        </span>
       </div>
       <div>
-       <img alt="Sheylla Nadjane Batista Lacerda" src="<?php echo get_template_directory_uri(); ?>/src/assets/images/orientador.png"/>
+       <img alt="Sheylla Nadjane Batista Lacerda" src="<?php echo get_template_directory_uri(); ?>/src/assets/images/orientador.png" loading="lazy"/>
        <p>
         Sheylla Nadjane Batista Lacerda
        </p>

@@ -34,7 +34,7 @@ get_header();
             </p>
           </div>
           <div class="au__img">
-            <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/unifsm.png" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/unifsm.png" alt="foto sobre a UNIFSM"  loading="lazy"/>
           </div>
         </div>
         <div class="container">

@@ -38,9 +38,9 @@ get_header();
                     <div class="nc__img">
                         <a href="<?php the_permalink(); ?>">
                             <?php if (has_post_thumbnail()) : ?>
-                                <img src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'medium')); ?>" alt="<?php the_title_attribute(); ?>" />
+                                <img src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'medium')); ?>" alt="<?php the_title_attribute(); ?>" loading="lazy"/>
                             <?php else : ?>
-                                <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/images/default-image.png'); ?>" alt="Imagem Padrão" />
+                                <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/images/default-image.png'); ?>" alt="Imagem Padrão" loading="lazy"/>
                             <?php endif; ?>
                         </a>
                     </div>

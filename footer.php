@@ -11,6 +11,7 @@
                             <img
                                 src="<?php echo get_template_directory_uri(); ?>/src/assets/images/logo-footer.png"
                                 alt="Logo da UNIFSM"
+                                loading="lazy"
                             />
                         </div>
 
@@ -44,7 +45,7 @@
                         </div>
 
                         <div class="f__qrcode">
-                            <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/qrcode.png" alt="QR Code" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/qrcode.png" alt="QR Code" loading="lazy" />
                         </div>
                     </div>
 

@@ -140,7 +140,7 @@ get_header();
 
         <section class="section">
             <div class="div__container i_cta">
-            <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/cta.png" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/cta.png" alt=""  loading="lazy"/>
             </div>
             <div class="div__container i__presentation">
             <div class="i__presentation__img">

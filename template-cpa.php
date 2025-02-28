@@ -26,7 +26,7 @@ get_header();
           </div>
           <div class="cpa__btn-container">
             <div>
-              <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/whatsapp-image.jpeg" alt="" />
+              <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/whatsapp-image.jpeg" alt=""  loading="lazy"/>
             </div>
             <div class="cpa__btns">
               <h5 class="title">Relatórios</h5>
@@ -59,7 +59,8 @@ get_header();
           <div class="card_img">
             <img
               src="<?php echo get_template_directory_uri(); ?>/src/assets/images/orientador.png"
-              alt="Foto da Coordenadora - Representante Docente"
+              alt="Foto da Coordenador(a) - Representante Docente"
+               loading="lazy"
             />
             <div>
               <h5>Profa Ms. Andréia Braga de Oliveira</h5>
@@ -87,7 +88,8 @@ get_header();
             <div class="card_img">
               <img
                 src="<?php echo get_template_directory_uri(); ?>/src/assets/images/orientador.png"
-                alt="Foto da Coordenadora - Representante Docente"
+                alt="Foto da Coordenador(a) - Representante Docente"
+                 loading="lazy"
               />
               <div class="black--color">
                 <h5>Ankilma do Nascimento Andrade Feitosa</h5>

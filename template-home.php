@@ -33,7 +33,7 @@ get_header();
                             $image_alt = esc_attr($banner['alt'] ?: 'Banner');
                             ?>
                             <div class="slide">
-                                <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>" />
+                                <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>" loading="lazy"/>
                             </div>
                             <?php
                         endforeach;
@@ -80,9 +80,9 @@ get_header();
                     while ($query->have_posts()) : $query->the_post(); ?>
                         <div class="new__img_l">
                             <?php if (has_post_thumbnail()) : ?>
-                                <img src="<?php the_post_thumbnail_url('large'); ?>" alt="<?php the_title(); ?>">
+                                <img src="<?php the_post_thumbnail_url('large'); ?>" alt="<?php the_title(); ?>" loading="lazy">
                             <?php else : ?>
-                                <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/img-teste.png" alt="Imagem Padrão">
+                                <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/img-teste.png" alt="Imagem de notícia da UNIFSM" loading="lazy">
                             <?php endif; ?>
                         </div>
                         <div class="new__content_l">
@@ -112,9 +112,9 @@ get_header();
                         <div class="new__group_r">
                             <div class="new__img_r">
                                 <?php if (has_post_thumbnail()) : ?>
-                                    <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title(); ?>">
+                                    <img src="<?php the_post_thumbnail_url('medium'); ?>" alt="<?php the_title(); ?>" loading="lazy">
                                 <?php else : ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/img-teste.png" alt="Imagem Padrão">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/img-teste.png" alt="foto de notícia da UNIFSM" loading="lazy">
                                 <?php endif; ?>
                             </div>
                             <div class="new__content_r">
@@ -378,7 +378,7 @@ get_header();
             </div>
             </div>
             <div class="au__img" class="a__yellow">
-            <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/unifsm.png" alt="" />
+            <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/unifsm.png" loading="lazy" alt="Faculdade Santa Maria em Cajazeiras, Paraíba" />
             </div>
         </div>
     </section>
