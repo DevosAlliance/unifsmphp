@@ -170,7 +170,7 @@ if (have_posts()) :
     </section>
 <?php endif; ?>
     <section class="section">
-    <iframe width="560" height="700" style="border: none;" src="https://fundacred.org.br/estudante-web/frame-simulador?ie=1021%7C1023%7C1024%7C1025%7C1026%7C1027"></iframe>
+    <iframe src="https://fundacred.org.br/estudante-web/frame-simulador?ie=1021%7C1023%7C1024%7C1025%7C1026%7C1027"></iframe>
     </section>
 </main>
 
