@@ -115,3 +115,52 @@
     margin: 2rem 0;
  }
 
+
+ 
+.hours {
+    margin: 1rem 0;
+    gap: 1rem;
+}
+
+.hours__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.hours__card {
+    width: 180px;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hours__card h6 {
+    font-size: var(--size-text);
+    font-weight: 500;
+}
+
+.hours__card p {
+    font-size: var(--size-normal);
+    font-weight: 300;
+    text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+    .hours__card {
+        width: 150px;
+    }
+}
+
+
+@media screen and (max-width: 350px) {
+    .hours__card {
+        width: 100%;
+    }
+}

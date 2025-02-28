@@ -11,6 +11,71 @@ if (have_posts()) :
         $anexos = get_field('documentos'); // Repetidor de documentos
         $links  = get_field('links');
 ?>
+
+
+<style>
+    
+ /* Acordeão para fies prouni */
+
+ .accordion {
+     width: 100%;
+     max-width: 600px;
+     background: #fff;
+     border-radius: 10px;
+     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+     overflow: hidden;
+ }
+
+ .accordion-item {
+     border-bottom: 1px solid #ddd;
+ }
+
+ .accordion-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 15px;
+     background: #003366;
+     color: #fff;
+     cursor: pointer;
+     font-weight: bold;
+     transition: background 0.3s ease;
+ }
+
+ .accordion-header:hover {
+     background: #002855;
+ }
+
+ .accordion-header i {
+     transition: transform 0.3s ease;
+ }
+
+ .accordion-content {
+     display: none;
+     padding: 15px;
+     background: #f9f9f9;
+     font-size: 14px;
+     line-height: 1.6;
+ }
+
+ .accordion-content a {
+     color: #003366;
+     font-weight: bold;
+     text-decoration: none;
+ }
+
+ .accordion-content a:hover {
+     text-decoration: underline;
+ }
+
+ .active .accordion-content {
+     display: block;
+ }
+
+ .active .accordion-header i {
+     transform: rotate(180deg);
+ }
+</style>
 <main class="main">
     <!-- Seção de Sobre -->
     <section class="section">
@@ -24,13 +89,43 @@ if (have_posts()) :
     <section class="section">
         <div class="container">
             <div class="spacing">
-                <div class="text-justify text-gray-600">
+                <div class="text-center text-gray-600">
                     <?php echo wpautop(wp_kses_post(get_field('sobre') ?: "Nenhuma informação disponível.")); ?>
                 </div>
 
             </div>
         </div>
     </section>
+
+    <section class="section">
+        <div class="container hours">
+          <div class="title__container">
+            <h5 class="title">Horário de atendimento</h5>
+          </div>
+          <div class="hours__container">
+            <div class="hours__card">
+              <h6>Segunda</h6>
+              <p>07h30 às 11h30 e 18h00 às 22h00</p>
+            </div>
+            <div class="hours__card">
+              <h6>Terça</h6>
+              <p>07h30 às 11h30 e 14h00 às 18h00</p>
+            </div>
+            <div class="hours__card">
+              <h6>Quarta</h6>
+              <p>07h30 às 11h30 e 18h00 às 22h00</p>
+            </div>
+            <div class="hours__card">
+              <h6>Quinta</h6>
+              <p>07h30 às 11h30 e 18h00 às 22h00</p>
+            </div>
+            <div class="hours__card">
+              <h6>Sexta</h6>
+              <p>07h30 às 11h30 e 13h30 às 17h30</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
     <!-- Seção de Setores -->
     <?php if ($existe_setor === 'Sim' && !empty($setores)) : ?>
