@@ -90,7 +90,6 @@ get_header();
   </main>
 
 <!-- Custom -->
-    <script src="<?php echo get_template_directory_uri(); ?>/src/assets/js/script.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/src/assets/js/main.js"></script>
 
 <?php get_footer(); ?>

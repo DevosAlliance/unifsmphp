@@ -472,7 +472,6 @@ get_header();
 </script>
 
 <!-- Custom -->
-    <script src="<?php echo get_template_directory_uri(); ?>/src/assets/js/script.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/src/assets/js/main.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/src/assets/js/tabs.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/src/assets/js/accordion.js"></script>
