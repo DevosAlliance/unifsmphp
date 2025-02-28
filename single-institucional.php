@@ -46,7 +46,7 @@ if (have_posts()) :
                         ?>
                             <div>
                                 <img alt="<?php echo esc_attr($pessoa['nome']); ?>" 
-                                     src="<?php echo esc_url(!empty($pessoa['foto']) ? $pessoa['foto']['url'] : get_template_directory_uri() . '/src/assets/images/orientador.png'); ?>" />
+                                     src="<?php echo esc_url(!empty($pessoa['foto']) ? $pessoa['foto']['url'] : get_template_directory_uri() . '/src/assets/images/FOTOSINFORMATIVAS.jpeg'); ?>" />
                                 <p><?php echo esc_html($pessoa['nome']); ?></p>
                                 <span><?php echo esc_html($pessoa['cargo']); ?></span>
                                 <span><?php echo esc_html($pessoa['telefone']); ?></span>
