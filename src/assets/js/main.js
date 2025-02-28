@@ -9,15 +9,6 @@ const dropBtn = document.querySelector(".dropbtn");
 
 let windowWidth = window.innerWidth;
 
-searchBtn.onclick = () => {
-  searchBox.classList.add("active");
-  searchInput.classList.add("active");
-  searchBtn.classList.add("active");
-  cancelBtn.classList.add("active");
-  dropdown.classList.add("hidden");
-  dropBtn.classList.add("hidden");
-};
-
 cancelBtn.onclick = () => {
   searchBox.classList.remove("active");
   searchInput.classList.remove("active");
