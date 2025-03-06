@@ -249,7 +249,7 @@ if (have_posts()):
                                 }
                             });
 
-                            // Alterna o estado do item clicado
+                            // Alterna o estado do item clicad
                             if (item.classList.contains("active")) {
                                 item.classList.remove("active");
                                 item.querySelector(".accordion-content").style.display = "none";
