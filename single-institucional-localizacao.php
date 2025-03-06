@@ -89,6 +89,16 @@ if (have_posts()) :
             </div>
         </div>
     </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="spacing">
+                <div class="text-center text-gray-600">
+                    <?php echo wpautop(wp_kses_post(get_field('sobre') ?: "")); ?>
+                </div>
+            </div>
+        </div>
+    </section>
     
     <section class="section">
         <div class="container">
