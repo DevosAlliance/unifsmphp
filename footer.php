@@ -131,11 +131,13 @@
 
         <?php wp_footer(); ?>
 
+        <!-- Custom -->
         <script src="<?php echo get_template_directory_uri(); ?>/src/assets/js/main.js"></script>
         <script src="<?php echo get_template_directory_uri(); ?>/src/assets/js/tabs.js"></script>
         <script src="<?php echo get_template_directory_uri(); ?>/src/assets/js/accordion.js"></script>
-        <script src="https://unpkg.com/blip-chat-widget" type="text/javascript"></script>
-        <script>
+        <script src="<?php echo get_template_directory_uri(); ?>/src/assets/js/carousel.js"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/src/assets/js/slider.js"></script>
+        <!-- <script>
             (function () {
                 window.onload = function () {
                     new BlipChat()
@@ -145,6 +147,6 @@
                         .build();
                     }
              })();
-        </script>
+        </script> -->
     </body>
 </html>
