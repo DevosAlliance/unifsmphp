@@ -173,24 +173,29 @@ if (have_posts()) :
         <div class="accordion">
             <div class="accordion-item">
                 <div class="accordion-header">
-                    <span>Envio/Entrega de documentos</span>
+                    <span>Envio/entrega de documentos:</span>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="accordion-content">
-                    <p>Em formato digital (PDF ou foto): apenas por e-mail: monitoria@fsmead.com.br
-Em formato físico: assinar a lista e deixar na mesa da Coordenação de Monitoria (Bloco A)</p>
-                    <p>O ingresso é feito exclusivamente através da nota do ENEM a partir de 2010.</p>
+                    <p>Em formato digital (PDF ou foto): apenas por e-mail: <a href="mailto:monitoria@fsmead.com.br">monitoria@fsmead.com.br</a>
+                    Em formato físico: assinar a lista e deixar na mesa da Coordenação de Monitoria (Bloco A)
+                    Informações detalhadas se encontram no passo a passo para novos monitores, assim como todos os modelos de documentos para preencher se encontram no site: <a href="https://www.unifsm.edu.br/monitoria/">https://www.unifsm.edu.br/monitoria/</a>
+                    </p>
                 </div>
             </div>
 
             <div class="accordion-item">
                 <div class="accordion-header">
-                    <span>Quem pode ingressar com o FIES?</span>
+                    <span>Termo de Compromisso:</span>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="accordion-content">
-                    <p>O candidato precisa ter participado do ENEM a partir de 2010, obtendo pelo menos 450 pontos na média das provas e nota acima de zero na redação.</p>
-                    <p>As inscrições são feitas através do <a href="https://acessounico.mec.gov.br/fies" target="_blank">Portal Único de Acesso ao Ensino Superior</a>.</p>
+                    <p>O início das atividades de monitoria só será autorizado após a entrega do Termo de Compromisso de Monitoria assinado.
+                    Entrega em formato físico e TAMBÉM por e-mail (enviar foto) <a href="mailto:monitoria@fsmead.com.br">monitoria@fsmead.com.br</a>
+                    Modelo no site: <a href="https://www.unifsm.edu.br/monitoria/">https://www.unifsm.edu.br/monitoria/</a>
+                    Termo de Compromisso só deverá ser entregue apenas 1 vez ao início da monitoria e válido por 2 semestres.
+                    Todas as assinaturas devem ser físicas (escritas a mão) ou preenchidas através do gov.br
+                </p>
                 </div>
             </div>
 
@@ -206,11 +211,63 @@ Em formato físico: assinar a lista e deixar na mesa da Coordenação de Monitor
 
             <div class="accordion-item">
                 <div class="accordion-header">
-                    <span>Como se inscrever no PROUNI?</span>
+                    <span>Cronograma de Atividades:</span>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="accordion-content">
-                    <p>As inscrições devem ser feitas através do <a href="https://acessounico.mec.gov.br/prouni" target="_blank">Portal Único de Acesso ao Ensino Superior</a>.</p>
+                    <p>
+                        O(A) monitor(a) deverá preencher o Cronograma de Atividades de Monitoria para fazer uso dos laboratórios e salas da instituição com solicitação mínima de uma semana de antecedência.
+                        Entrega APENAS por e-mail (enviar foto) <a href="mailto:monitoria@fsmead.com.br">monitoria@fsmead.com.br</a>
+                        Modelo no site: <a href="https://www.unifsm.edu.br/monitoria/">https://www.unifsm.edu.br/monitoria/</a>
+                        Cronograma de Atividades deverá ser entregue ao início de cada semestre.
+                        Todas as assinaturas devem ser físicas (escritas a mão) ou preenchidas através do gov.br
+                    </p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span>Relatório Semestral de Atividades:</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                    <p>
+                        O(A) monitor(a) deverá preencher o Relatório Semestral de Atividades ao final de cada semestre e enviar para comprovação de atividades necessárias para validação do certificado.
+                        Entrega APENAS em formato digital pela plataforma EAD e TAMBÉM por e-mail <a href="mailto:monitoria@fsmead.com.br">monitoria@fsmead.com.br</a>
+                        Modelo no site: <a href="https://www.unifsm.edu.br/monitoria/">https://www.unifsm.edu.br/monitoria/</a>
+                        Relatório Semestral de Atividades deverá ser entregue ao final de cada semestre.
+                        Todas as assinaturas devem ser físicas (escritas a mão) ou preenchidas através do gov.br
+                    </p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span>Termo de Desligamento de Monitoria:</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                    <p>
+                        O(A) monitor(a) poderá se desligar da monitoria a qualquer momento desde que preencha e assine o Termo de Desligamento.
+                        Entrega APENAS em formato digital por e-mail <a href="mailto:monitoria@fsmead.com.br">monitoria@fsmead.com.br</a>
+                        Modelo no site: <a href="https://www.unifsm.edu.br/monitoria/">https://www.unifsm.edu.br/monitoria/</a>
+                        Todas as assinaturas devem ser físicas (escritas a mão) ou preenchidas através do gov.br
+                    </p>
+                </div>
+            </div>
+
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <span>Certificados de Monitoria:</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="accordion-content">
+                    <p>
+                        O(A) monitor(a) deverá solicitar o certificado de monitoria por e-mail <a href="mailto:monitoria@fsmead.com.br">monitoria@fsmead.com.br</a> ao final do prazo de 2 semestres de monitoria, bem como enviar cópia dos relatórios semestrais de monitoria em anexo para validação das horas.
+                        O(A) monitor(a) que cumprir apenas 1 semestre de monitoria e desejar solicitar certificado, deverá solicitar o certificado de monitoria por e-mail <a href="mailto:monitoria@fsmead.com.br">monitoria@fsmead.com.br</a> com o relatório semestral e o termo de desligamento em anexo para validação de horas e confirmação de término de monitoria
+                        Solicitações incompletas e/ou com informações erradas serão descartadas.
+                        Prazo para recebimento do certificado após solicitação por e-mail: de 1 a 2 meses.
+                    </p>
                 </div>
             </div>
         </div>
