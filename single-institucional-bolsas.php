@@ -72,6 +72,11 @@ if (have_posts()) :
  .active .accordion-header i {
      transform: rotate(180deg);
  }
+
+ .ul__bolsas {
+    list-style-type: circle;
+    padding-left: 1rem;
+ }
 </style>
 <main class="main">
     <!-- Seção de Sobre -->
@@ -195,7 +200,7 @@ if (have_posts()) :
                 </div>
                 <div class="accordion-content">
                     <p>Todos os documentos devem ser originais, fazemos o escaneamento aqui na instituição.</p>
-                    <ul>
+                    <ul class="ul__bolsas">
                         <li>Certificado do Ensino Médio</li>
                         <li>Histórico do Ensino Médio</li>
                         <li>RG, C.P.F e Título de Eleitor</li>
