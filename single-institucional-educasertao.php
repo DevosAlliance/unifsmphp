@@ -12,10 +12,7 @@ if (have_posts()) :
         $links  = get_field('links');
 ?>
 
-
         <style>
-            /* Acordeão para fies prouni */
-
             .accordion {
                 width: 100%;
                 max-width: 600px;
@@ -74,6 +71,12 @@ if (have_posts()) :
             .active .accordion-header i {
                 transform: rotate(180deg);
             }
+
+            .accordion__title {
+                font-size: 1.5rem;
+                font-weight: 600;
+                text-align: center;
+            }
         </style>
 
         <main class="main">
@@ -90,9 +93,8 @@ if (have_posts()) :
                 <div class="container">
                     <div class="spacing">
                         <div class="text-center text-gray-600">
-                            <?php echo wpautop(wp_kses_post(get_field('sobre') ?: "Nenhuma informação disponível.")); ?>
+                            <?php echo wpautop(wp_kses_post(get_field('sobre') ?: "")); ?>
                         </div>
-
                     </div>
                 </div>
             </section>
@@ -127,129 +129,89 @@ if (have_posts()) :
                 </section>
             <?php endif; ?>
 
-            <!-- Seção de Documentos -->
-            <?php if (!empty($anexos) || !empty($links)) : ?>
-                <section class="section">
-                    <div class="container">
-                        <h2 class="text-center text-2xl font-bold mb-8">Documentos e Links</h2>
-                        <div class="text-center">
-                            <?php
-                            $count_items = 0;
-
-                            // Exibir Documentos (Anexos)
-                            if (!empty($anexos)) :
-                                foreach ($anexos as $anexo) :
-                                    if (!empty($anexo['arquivo']['url']) && !empty($anexo['nome'])) :
-                                        $count_items++;
-                            ?>
-                                        <a class="btn mb-2" href="<?php echo esc_url($anexo['arquivo']['url']); ?>" target="_blank">
-                                            📄 <?php echo esc_html($anexo['nome']); ?>
-                                        </a>
-                                        <?php if ($count_items % 3 == 0) echo '<div style="width: 100%;"></div>'; // Quebra a linha a cada 3 itens 
-                                        ?>
-                                    <?php
-                                    endif;
-                                endforeach;
-                            endif;
-
-                            // Exibir Links Externos
-                            if (!empty($links)) :
-                                foreach ($links as $link) :
-                                    if (!empty($link['link']) && !empty($link['nome'])) :
-                                        $count_items++;
-                                    ?>
-                                        <a class="btn mb-2" href="<?php echo esc_url($link['link']); ?>" target="_blank">
-                                            🔗 <?php echo esc_html($link['nome']); ?>
-                                        </a>
-                                        <?php if ($count_items % 3 == 0) echo '<div style="width: 100%;"></div>'; // Quebra a linha a cada 3 itens 
-                                        ?>
-                            <?php
-                                    endif;
-                                endforeach;
-                            endif;
-                            ?>
-                        </div>
-                    </div>
-                </section>
-            <?php endif; ?>
-
             <section class="section">
                 <div class="container">
                     <h5 class="spacing accordion__title">Dúvidas e Perguntas Frequentes</h5>
                     <div class="accordion">
                         <div class="accordion-item">
                             <div class="accordion-header">
-                                <span>O que é o FIES?</span>
+                                <span>Sobre o Educa Sertão</span>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="accordion-content">
-                                <p>O Fundo de Financiamento Estudantil (FIES) é um programa do MEC que oferece financiamento para estudantes matriculados em instituições de ensino superior privadas.</p>
-                                <p>O ingresso é feito exclusivamente através da nota do ENEM a partir de 2010.</p>
+                                <p>O educa sertão é um financiamento institucional, que assemelha-se ao FIES, ou seja, o aluno pagará 50% do valor da mensalidade ao longo do curso e o restante após concluir. É necessário apresentar documentação com renda comprovada para um mantenedor* e dois fiadores.</p>
+                                <p>* O mantenedor é a pessoa que arca com suas despesas.</p>
+                                <p>A renda tem que ser de no mínimo 01 salário mínimo. Depois disso, estando a documentação toda ok, é enviado a uma comissão para análise da concessão do financiamento.</p>
+                                <p>A primeira matrícula o valor é integral e as demais com 50%.</p>
+                                <p>O financiamento não pode haver atrasos nos boletos mensais.</p>
                             </div>
                         </div>
 
                         <div class="accordion-item">
                             <div class="accordion-header">
-                                <span>Quem pode ingressar com o FIES?</span>
+                                <span>Sobre o valor que será pago após a conclusão do curso:</span>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="accordion-content">
-                                <p>O candidato precisa ter participado do ENEM a partir de 2010, obtendo pelo menos 450 pontos na média das provas e nota acima de zero na redação.</p>
-                                <p>As inscrições são feitas através do <a href="https://acessounico.mec.gov.br/fies" target="_blank">Portal Único de Acesso ao Ensino Superior</a>.</p>
+                                <p>* O valor dos 50% que vai ser pago ao final do curso é SEM juros;</p>
+                                <p>* Se o aluno desistir/abandonar pagará o valor que foi utilizado durante o período de imediato.</p>
+                                <p>* O pagamento inicia-se logo que conclui o curso.</p>
+                                <p>* O parcelamento será feito no mesmo período de tempo utilizado.</p>
                             </div>
                         </div>
 
                         <div class="accordion-item">
                             <div class="accordion-header">
-                                <span>O que é PROUNI?</span>
+                                <span>O valor acumulado ao longo do curso é pago como?</span>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="accordion-content">
-                                <p>O Programa Universidade Para Todos (Prouni) oferece bolsas integrais e parciais para estudantes sem diploma de nível superior em instituições privadas de ensino superior.</p>
+                                <p>O valor acumulado é resultado dos 50% restante do valor da mensalidade somada ao longo do curso sem juros, e será parcelado sem juros para pagamento no mesmo período de tempo em que foi utilizado o financiamento.</p>
                             </div>
                         </div>
 
                         <div class="accordion-item">
                             <div class="accordion-header">
-                                <span>Como se inscrever no PROUNI?</span>
+                                <span>Possui carência para o início do pagamento?</span>
                                 <i class="fas fa-chevron-down"></i>
                             </div>
                             <div class="accordion-content">
-                                <p>As inscrições devem ser feitas através do <a href="https://acessounico.mec.gov.br/prouni" target="_blank">Portal Único de Acesso ao Ensino Superior</a>.</p>
+                                <p>Não possui carência para início do pagamento do restante acumulado.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Documentos Necessários</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Procurar o setor para solicitar a lista da documentação e forma de envio.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Trancamento/Transferência/Abandono do curso.</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Nesses casos o aluno irá efetuar o pagamento do valor acumulado de imediato.</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <div class="accordion-header">
+                                <span>Trancamento de curso</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p>Você pode sim trancar e se manter dentro da bolsa, porém, você tem um período letivo para retornar e se manter dentro da bolsa.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-
-            <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                    const accordionItems = document.querySelectorAll(".accordion-item");
-
-                    accordionItems.forEach((item) => {
-                        const header = item.querySelector(".accordion-header");
-
-                        header.addEventListener("click", function() {
-                            // Fecha todos os outros itens antes de abrir o atual
-                            accordionItems.forEach((otherItem) => {
-                                if (otherItem !== item) {
-                                    otherItem.classList.remove("active");
-                                    otherItem.querySelector(".accordion-content").style.display = "none";
-                                }
-                            });
-
-                            // Alterna o estado do item clicado
-                            if (item.classList.contains("active")) {
-                                item.classList.remove("active");
-                                item.querySelector(".accordion-content").style.display = "none";
-                            } else {
-                                item.classList.add("active");
-                                item.querySelector(".accordion-content").style.display = "block";
-                            }
-                        });
-                    });
-                });
-            </script>
 
         </main>
 
