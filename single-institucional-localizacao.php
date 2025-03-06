@@ -75,9 +75,12 @@ if (have_posts()) :
 
  .localizacao {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+ }
+
+ .localizacao iframe {
+    width: 100%;
+    max-width: 100%;
+    height: 350px;
  }
 </style>
 <main class="main">
