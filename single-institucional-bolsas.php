@@ -75,6 +75,7 @@ if (have_posts()) :
 
  .ul__bolsas {
     list-style-type: circle;
+    padding-left: 1rem;
  }
 </style>
 <main class="main">
