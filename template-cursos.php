@@ -1,108 +1,166 @@
 <?php
+
 /**
  * Template Name: Cursos
  */
 get_header();
 ?>
-    <main class="main">
-        <section class="section">
-            <div class="title__box">
+
+<style>
+    .i__presentation__img {
+        height: 350px;
+        max-height: 100%;
+    }
+
+    .video__presentation {
+        height: 100%;
+    }
+
+    .cta {
+        height: auto;
+    }
+
+    .cta a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cta a img {
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 50px;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .i__presentation__img {
+            height: 250px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .i__presentation__img {
+            height: 180px;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .cta a img {
+            border-radius: 25px;
+        }
+    }
+
+    @media screen and (max-width: 375px) {
+        .i__presentation__img {
+            height: 150px;
+        }
+    }
+</style>
+
+
+<main class="main">
+    <section class="section">
+        <div class="title__box">
             <div class="tb__title">
                 <h2>CURSOS</h2>
             </div>
-            </div>
-        </section>
-        
-        <section class="section">
-            <div class="div__container i__accordion">
-                <?php
-                // Consulta para recuperar os posts do CPT "info-curso"
-                $infoCursos = new WP_Query(array(
-                    'post_type'      => 'info-curso',
-                    'posts_per_page' => -1,
-                    'title'          => 'info-cursos',
-                ));
+        </div>
+    </section>
 
-                if ($infoCursos->have_posts()) :
-                    while ($infoCursos->have_posts()) : $infoCursos->the_post();
+    <section class="section">
+        <div class="div__container i__accordion">
+            <?php
+            // Consulta para recuperar os posts do CPT "info-curso"
+            $infoCursos = new WP_Query(array(
+                'post_type'      => 'info-curso',
+                'posts_per_page' => -1,
+                'title'          => 'info-cursos',
+            ));
 
-                        // Verifica se o campo 'item' existe e tem dados
-                        if (have_rows('item')) :
-                            while (have_rows('item')) : the_row();
-                                $item_menu = get_sub_field('item_menu');
-                                $itens = get_sub_field('itens');
+            if ($infoCursos->have_posts()) :
+                while ($infoCursos->have_posts()) : $infoCursos->the_post();
 
-                                // Exibe o título do acordeão
-                                echo '<div class="accordion">';
-                                echo '<div class="a__title">';
-                                echo '<span>' . esc_html($item_menu) . '</span>';
-                                echo '<i class="ri-arrow-drop-down-line"></i>';
-                                echo '</div>';
+                    // Verifica se o campo 'item' existe e tem dados
+                    if (have_rows('item')) :
+                        while (have_rows('item')) : the_row();
+                            $item_menu = get_sub_field('item_menu');
+                            $itens = get_sub_field('itens');
 
-                                // Exibe os links dos itens associados
-                                if ($itens) {
-                                    echo '<div class="a__btns"><ul>';
-                                    foreach ($itens as $item) {
-                                        $nome = $item['nome'];
-                                        $link = $item['link'];
-                                        echo '<li><a href="' . esc_url($link) . '">' . esc_html($nome) . ' <i class="ri-arrow-right-up-line"></i></a></li>';
-                                    }
-                                    echo '</ul></div>';
+                            // Exibe o título do acordeão
+                            echo '<div class="accordion">';
+                            echo '<div class="a__title">';
+                            echo '<span>' . esc_html($item_menu) . '</span>';
+                            echo '<i class="ri-arrow-drop-down-line"></i>';
+                            echo '</div>';
+
+                            // Exibe os links dos itens associados
+                            if ($itens) {
+                                echo '<div class="a__btns"><ul>';
+                                foreach ($itens as $item) {
+                                    $nome = $item['nome'];
+                                    $link = $item['link'];
+                                    echo '<li><a href="' . esc_url($link) . '">' . esc_html($nome) . ' <i class="ri-arrow-right-up-line"></i></a></li>';
                                 }
+                                echo '</ul></div>';
+                            }
 
-                                echo '</div>';
+                            echo '</div>';
+                        endwhile;
+                    endif;
+
+                endwhile;
+                wp_reset_postdata();
+            else :
+                echo '<p>Nenhuma informação encontrada.</p>';
+            endif;
+            ?>
+        </div>
+    </section>
+
+
+    <section class="section">
+        <div class="g__container">
+            <div class="g__carousel">
+                <div class="g__tab__box">
+                    <button class="tab__btn active">Presencial</button>
+                    <button class="tab__btn">Cursos Digitais</button>
+                </div>
+                <div class="g__content__box">
+                    <?php
+                    $modalidades = ['Presencial', 'Digital'];
+
+                    foreach ($modalidades as $index => $modalidade) :
+                        // Query para buscar cursos conforme a modalidade
+                        $args = array(
+                            'post_type'      => 'curso',
+                            'posts_per_page' => -1,
+                            'meta_key'       => 'modalidade',
+                            'meta_value'     => $modalidade,
+                            'orderby'        => 'title',
+                            'order'          => 'ASC',
+                        );
+
+                        $query = new WP_Query($args);
+                        $cursos = [];
+
+                        // Preenche a lista de cursos sem qualquer reordenação
+                        if ($query->have_posts()) :
+                            while ($query->have_posts()) : $query->the_post();
+                                $cursos[] = array(
+                                    'title'      => get_the_title(),
+                                    'link'       => get_permalink(),
+                                    'tipo'       => get_field('tipo') ?: 'Não informado', // Evita undefined
+                                    'semestres'  => get_field('semestres') ?: 'Não informado',
+                                    'periodo'    => get_field('periodo') ?: 'Não informado',
+                                );
                             endwhile;
+                            wp_reset_postdata();
                         endif;
-
-                    endwhile;
-                    wp_reset_postdata();
-                else :
-                    echo '<p>Nenhuma informação encontrada.</p>';
-                endif;
-                ?>
-            </div>
-        </section>
-
-
-        <section class="section">
-            <div class="g__container">
-                <div class="g__carousel">
-                    <div class="g__tab__box">
-                        <button class="tab__btn active">Presencial</button>
-                        <button class="tab__btn">Cursos Digitais</button>
-                    </div>
-                    <div class="g__content__box">
-                        <?php
-                        $modalidades = ['Presencial', 'Digital'];
-
-                        foreach ($modalidades as $index => $modalidade) :
-                            // Query para buscar cursos conforme a modalidade
-                            $args = array(
-                                'post_type'      => 'curso',
-                                'posts_per_page' => -1,
-                                'meta_key'       => 'modalidade',
-                                'meta_value'     => $modalidade,
-                                'orderby'        => 'title',
-                                'order'          => 'ASC',
-                            );
-
-                            $query = new WP_Query($args);
-                            $cursos = [];
-
-                            // Preenche a lista de cursos sem qualquer reordenação
-                            if ($query->have_posts()) :
-                                while ($query->have_posts()) : $query->the_post();
-                                    $cursos[] = array(
-                                        'title'      => get_the_title(),
-                                        'link'       => get_permalink(),
-                                        'tipo'       => get_field('tipo') ?: 'Não informado', // Evita undefined
-                                        'semestres'  => get_field('semestres') ?: 'Não informado',
-                                        'periodo'    => get_field('periodo') ?: 'Não informado',
-                                    );
-                                endwhile;
-                                wp_reset_postdata();
-                            endif;
-                        ?>
+                    ?>
 
                         <div class="g__content <?php echo $index === 0 ? 'active' : ''; ?>">
                             <ul class="cards">
@@ -130,19 +188,21 @@ get_header();
                                 <?php endif; ?>
                             </ul>
                         </div>
-                        <?php endforeach; ?>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
 
 
-        <section class="section">
-            <div class="div__container i_cta">
-            <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/cta.png" alt=""  loading="lazy"/>
-            </div>
-            <div class="div__container i__presentation">
+    <section class="section">
+        <div class="div__container cta">
+            <a href="https://wa.me/558331427476">
+                <img src="<?php echo esc_attr(get_field('cta', 'option')); ?>">
+            </a>
+        </div>
+        <div class="div__container i__presentation">
             <div class="i__presentation__img">
                 <!--<img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/img-teste.png" alt="" />-->
                 <iframe width="100%" class="video__presentation" src="https://www.youtube.com/embed/WikgGoMZm7w" title="VESTIBULAR DE MEDICINA 2024.2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -150,16 +210,16 @@ get_header();
             <div class="i__presentation__content">
                 <h5>Estude na UNIFSM</h5>
                 <p>
-                <?php echo esc_html(get_field('sobre_nos_resumido', 'option')); ?>
+                    <?php echo esc_html(get_field('sobre_nos_resumido', 'option')); ?>
                 </p>
             </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
+</main>
 
 
-    <!-- Custom -->
-    <script src="<?php echo get_template_directory_uri(); ?>/src/assets/js/main.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/src/assets/js/tabs.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/src/assets/js/accordion.js"></script>
+<!-- Custom -->
+<script src="<?php echo get_template_directory_uri(); ?>/src/assets/js/main.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/src/assets/js/tabs.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/src/assets/js/accordion.js"></script>
 <?php get_footer(); ?>

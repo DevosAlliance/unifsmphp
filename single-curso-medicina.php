@@ -28,18 +28,37 @@ if (have_posts()) :
         height: 100%;
       }
 
+      /*
       .cta a {
         width: 100%;
         height: 100%;
-        padding: 1rem;
         display: flex;
         justify-content: center;
         align-items: center;
       }
 
       .cta a img {
-        width: auto;
-        height: auto;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+      }
+      */
+      .cta {
+        height: auto
+      }
+
+      .cta a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .cta a img {
+        width: 100%;
+        height: 100%;
         max-width: 100%;
         max-height: 100%;
       }
@@ -53,11 +72,28 @@ if (have_posts()) :
         .i__presentation__img {
           height: 180px;
         }
+        /*
+        .cta {
+          height: 150px;
+        }
+        */
       }
-      @media screen and (max-width: 375) {
+      @media screen and (max-width: 425px) {
+        /*
+        .cta {
+          height: 100px;
+        }
+        */
+      }
+      @media screen and (max-width: 375px) {
         .i__presentation__img {
           height: 150px;
         }
+        /*
+        .cta {
+          height: auto;
+        }
+        */
       }
     </style>
 
@@ -182,9 +218,6 @@ if (have_posts()) :
             <?php endif; ?>
           </div>
 
-
-
-
           <div class="faculty">
             <div class="title__container">
               <h5 class="title white--color">Corpo Docente</h5>
@@ -229,9 +262,8 @@ if (have_posts()) :
           </div>
 
           <div class="cta">
-            <a href="#">
-              <!--<img src="<?php echo esc_attr(get_field('cta', 'option')); ?>">-->
-              <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/cta2.png" alt="" loading="lazy" />
+            <a href="https://wa.me/558331427476">
+              <img src="<?php echo esc_attr(get_field('cta', 'option')); ?>">
             </a>
           </div>
         </div>
