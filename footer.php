@@ -126,7 +126,10 @@
             </footer>
 
             <div class="b_footer">
-                <span>&copy; <?php echo date('Y'); ?> - Centro Universitário Santa Maria. CNPJ  03.945.249/0001-68</span>
+                <div class="b_footer_content">
+                    <span>&copy; <?php echo date('Y'); ?> - Centro Universitário Santa Maria. CNPJ  03.945.249/0001-68</span>
+                    <span class="devos">Desenvolvido por <a href="https://devosalliance.com">Devos Tecnologia</a></span>
+                </div>
             </div>
 
         <?php wp_footer(); ?>
