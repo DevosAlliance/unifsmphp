@@ -20,10 +20,10 @@ if (have_posts()) :
 
 /* Cores principais */
 :root {
-    --primary-color: #FF5722;
-    --primary-dark: #E64A19;
-    --primary-light: #FFCCBC;
-    --accent-color: #FF9800;
+    --primary-color: #1b2972;
+    --primary-dark: #1b2972;
+    --primary-light:rgb(14, 182, 253);
+    --accent-color: #0086be;
     --text-light: #FFFFFF;
     --text-dark: #212121;
     --background-light: #FAFAFA;
