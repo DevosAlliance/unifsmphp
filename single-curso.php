@@ -83,7 +83,7 @@ if (have_posts()) :
             <h6><?php echo esc_html($email); ?></h6>
           </div>
           <div class="courses__btns">
-            <button class="cs__btn" onclick="window.open('<?php echo esc_html($matriz_curricular); ?>', '_blank')">>
+            <button class="cs__btn" onclick="window.open('<?php echo esc_html($matriz_curricular); ?>', '_blank')">
               Matriz Curricular <span><?php echo esc_html($carga_horaria); ?> horas</span>
             </button>
             <button id="btnModal" class="cs__btn">Investimento</button>
