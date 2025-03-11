@@ -170,7 +170,7 @@ if (have_posts()) :
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #FF5722;
+    color: var(--primary-color);
     position: relative;
     display: inline-block;
     padding-bottom: 15px;
@@ -184,7 +184,7 @@ if (have_posts()) :
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background-color: #FF9800;
+    background-color: var(--primary-light); 
 }
 
 /* Grid de recursos */
@@ -217,7 +217,7 @@ if (have_posts()) :
 .recurso-icon {
     width: 80px;
     height: 80px;
-    background-color: #FFCCBC;
+    background-color: var(--primary-light); 
     border-radius: 50%;
     margin: 0 auto 20px;
     display: flex;
@@ -227,14 +227,14 @@ if (have_posts()) :
 }
 
 .recurso-card:hover .recurso-icon {
-    background-color: #FF5722;
+    background-color: var(--primary-color);
     color: white;
 }
 
 /* Estilos dos ícones bootstrap */
 .recurso-icon i {
     font-size: 2.5rem;
-    color: #FF5722;
+    color:var(--primary-color);
     transition: all 0.3s ease;
 }
 
@@ -256,7 +256,7 @@ if (have_posts()) :
 .recurso-link {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #FF5722;
+    background-color: var(--primary-color);
     color: white;
     text-decoration: none;
     border-radius: 30px;
@@ -266,7 +266,7 @@ if (have_posts()) :
 }
 
 .recurso-link:hover {
-    background-color: #E64A19;
+    background-color:  var(--primary-color);
     transform: translateY(-3px);
 }
 
