@@ -60,7 +60,7 @@ if (have_posts()) :
     display: inline-block;
     padding: 12px 30px;
     background-color: #fff;
-    color: #00bcd4;
+    color: #1b2972;
     border-radius: 50px;
     font-weight: bold;
     text-decoration: none;
