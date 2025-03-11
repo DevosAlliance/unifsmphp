@@ -742,7 +742,7 @@ if (have_posts()) :
                 <div class="banner-qrcode">
                     <h3>DESCUBRA O NOSSO INSTAGRAM!</h3>
                     <div class="qrcode-container">
-                        <img src="https://unifsmhomologacao.devosalliance.com.br/wp-content/uploads/2025/03/Captura-de-tela-2025-03-11-164258.webp" alt="QR Code do Instagram" />
+                        <img src="https://unifsmhomologacao.devosalliance.com.br/wp-content/uploads/2025/03/Captura-de-tela-2025-03-11-164258-e1741722331655.webp" alt="QR Code do Instagram" />
                     </div>
                 </div>
             </div>
