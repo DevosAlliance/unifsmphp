@@ -125,10 +125,10 @@
                 </div>
             </footer>
 
-            <div class="b_footer">
-                <div class="b_footer_content">
-                    <span>&copy; <?php echo date('Y'); ?> - Centro Universitário Santa Maria. CNPJ  03.945.249/0001-68</span>
-                    <span class="devos">Desenvolvido por <a href="https://devosalliance.com">Devos Tecnologia</a></span>
+            <div class="b_footer" style="background-color: #f8f8f8; padding: 20px 0; width: 100%;">
+                <div class="b_footer_content" style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; font-size: 14px; color: #666;">
+                    <span style="display: inline-block;">&copy; <?php echo date('Y'); ?> - Centro Universitário Santa Maria. CNPJ  03.945.249/0001-68</span>
+                    <span class="devos" style="display: inline-block;">Desenvolvido por <a href="https://devosalliance.com" style="color: #0096fa; text-decoration: none; transition: color 0.3s;">Devos Tecnologia</a></span>
                 </div>
             </div>
 
