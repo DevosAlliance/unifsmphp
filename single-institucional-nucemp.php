@@ -15,6 +15,7 @@ if (have_posts()) :
         $links  = get_field('links');
 ?>
 
+
 <style>
 /* Estilos para a página do Núcleo de Empregabilidade */
 
@@ -659,27 +660,37 @@ if (have_posts()) :
             </div>
             <div class="recursos-grid">
                 <div class="recurso-card">
-                    <div class="recurso-icon"></div>
+                    <div class="recurso-icon">
+                        <i class="bi bi-building"></i>
+                    </div>
                     <h3 class="recurso-title">CONVÊNIO E PARCERIA COM OUTRAS EMPRESAS E INSTITUIÇÕES DA REGIÃO</h3>
                     <a href="#convenios" class="recurso-link">Saiba mais</a>
                 </div>
                 <div class="recurso-card">
-                    <div class="recurso-icon"></div>
+                    <div class="recurso-icon">
+                        <i class="bi bi-star"></i>
+                    </div>
                     <h3 class="recurso-title">JORNADAS QUE INSPIRAM</h3>
                     <a href="#jornadas" class="recurso-link">Saiba mais</a>
                 </div>
                 <div class="recurso-card">
-                    <div class="recurso-icon"></div>
+                    <div class="recurso-icon">
+                        <i class="bi bi-tools"></i>
+                    </div>
                     <h3 class="recurso-title">OFICINAS E QUALIFICAÇÕES</h3>
                     <a href="#oficinas" class="recurso-link">Saiba mais</a>
                 </div>
                 <div class="recurso-card">
-                    <div class="recurso-icon"></div>
+                    <div class="recurso-icon">
+                        <i class="bi bi-people"></i>
+                    </div>
                     <h3 class="recurso-title">ACOMPANHAMENTO DE EGRESSOS</h3>
                     <a href="#egressos" class="recurso-link">Saiba mais</a>
                 </div>
                 <div class="recurso-card">
-                    <div class="recurso-icon"></div>
+                    <div class="recurso-icon">
+                        <i class="bi bi-mortarboard"></i>
+                    </div>
                     <h3 class="recurso-title">SOLICITAÇÃO DE MONITORIA PARA DESENVOLVIMENTO DE SUCESSO ACADÊMICO</h3>
                     <a href="#monitoria" class="recurso-link">Saiba mais</a>
                 </div>

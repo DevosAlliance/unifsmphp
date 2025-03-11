@@ -24,6 +24,7 @@
         <meta name="twitter:title" content="<?php wp_title('|', true, 'right'); ?>">
         <meta name="twitter:description" content="<?php bloginfo('description'); ?>">
         <meta name="twitter:image" content="https://unifsm.edu.br/wp-content/uploads/2023/01/logounifsm2.png">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <!-- Preload (Melhora Performance) -->
         <link rel="preload" href="<?php echo get_template_directory_uri(); ?>/src/assets/css/style.css" as="style">
