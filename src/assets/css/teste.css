@@ -1,0 +1,97 @@
+/* Estilos para a seção de Documentos e Links */
+.documentos-section {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+.documentos-container {
+    margin-top: 30px;
+}
+
+.documentos-grupo {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.documentos-grupo-titulo {
+    background-color: #192B6C;
+    color: white;
+    padding: 15px 20px;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.documentos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.documento-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    background-color: #f5f5f5;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #e0e0e0;
+}
+
+.documento-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    background-color: #eef2ff;
+}
+
+.link-item {
+    background-color: #f0f7ff;
+}
+
+.link-item:hover {
+    background-color: #e1edff;
+}
+
+.documento-icone {
+    font-size: 20px;
+    margin-right: 12px;
+    color: #192B6C;
+}
+
+.documento-nome {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #192B6C;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .documentos-grid {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .documento-item {
+        padding: 10px 12px;
+    }
+
+    .documentos-grupo-titulo {
+        padding: 12px 15px;
+        font-size: 16px;
+    }
+}
+
+/* Tablets */
+@media (min-width: 769px) and (max-width: 991px) {
+    .documentos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

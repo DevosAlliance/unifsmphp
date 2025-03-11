@@ -222,6 +222,7 @@ function carregar_css_otimizado() {
         'institucional' => [
             'reitoria' => '/src/assets/css/reitoria.css',
             'about-us' => '/src/assets/css/about-us.css',
+            'teste' => '/src/assets/css/teste.css',
         ],
         'curso' => [
             'course' => '/src/assets/css/course.css',

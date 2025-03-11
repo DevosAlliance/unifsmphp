@@ -126,49 +126,48 @@ if (have_posts()) :
         </section>
     <?php endif; ?>
 
-    <!-- Seção de Documentos -->
+    <!-- Seção de Documentos e Links -->
     <?php if (!empty($anexos) || !empty($links)) : ?>
-    <section class="section">
-        <div class="container">
-            <h2 class="text-center text-2xl font-bold mb-8">Documentos e Links</h2>
-            <div class="text-center">
-                <?php 
-                $count_items = 0;
-
-                // Exibir Documentos (Anexos)
-                if (!empty($anexos)) :
-                    foreach ($anexos as $anexo) :
-                        if (!empty($anexo['arquivo']['url']) && !empty($anexo['nome'])) :
-                            $count_items++;
-                ?>
-                            <a class="btn mb-2" href="<?php echo esc_url($anexo['arquivo']['url']); ?>" target="_blank">
-                                📄 <?php echo esc_html($anexo['nome']); ?>
-                            </a>
-                            <?php if ($count_items % 3 == 0) echo '<div style="width: 100%;"></div>'; // Quebra a linha a cada 3 itens ?>
-                <?php 
-                        endif;
-                    endforeach;
-                endif;
-
-                // Exibir Links Externos
-                if (!empty($links)) :
-                    foreach ($links as $link) :
-                        if (!empty($link['link']) && !empty($link['nome'])) :
-                            $count_items++;
-                ?>
-                            <a class="btn mb-2" href="<?php echo esc_url($link['link']); ?>" target="_blank">
-                                🔗 <?php echo esc_html($link['nome']); ?>
-                            </a>
-                            <?php if ($count_items % 3 == 0) echo '<div style="width: 100%;"></div>'; // Quebra a linha a cada 3 itens ?>
-                <?php 
-                        endif;
-                    endforeach;
-                endif;
-                ?>
+        <section class="section documentos-section">
+            <div class="container">
+                <div class="documentos-container">
+                    <!-- Documentos (Anexos) -->
+                    <?php if (!empty($anexos)) : ?>
+                    <div class="documentos-grupo">
+                        <h3 class="documentos-grupo-titulo">Documentos</h3>
+                        <div class="documentos-grid">
+                            <?php foreach ($anexos as $anexo) : ?>
+                                <?php if (!empty($anexo['arquivo']['url']) && !empty($anexo['nome'])) : ?>
+                                    <a class="documento-item" href="<?php echo esc_url($anexo['arquivo']['url']); ?>" target="_blank">
+                                        <span class="documento-icone">📄</span>
+                                        <span class="documento-nome"><?php echo esc_html($anexo['nome']); ?></span>
+                                    </a>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+                    
+                    <!-- Links Externos -->
+                    <?php if (!empty($links)) : ?>
+                    <div class="documentos-grupo">
+                        <h3 class="documentos-grupo-titulo">Links</h3>
+                        <div class="documentos-grid">
+                            <?php foreach ($links as $link) : ?>
+                                <?php if (!empty($link['link']) && !empty($link['nome'])) : ?>
+                                    <a class="documento-item link-item" href="<?php echo esc_url($link['link']); ?>" target="_blank">
+                                        <span class="documento-icone">🔗</span>
+                                        <span class="documento-nome"><?php echo esc_html($link['nome']); ?></span>
+                                    </a>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+                </div>
             </div>
-        </div>
-    </section>
-<?php endif; ?>
+        </section>
+    <?php endif; ?>
     <section class="section">
         <div class="accordion">
             <div class="accordion-item">
