@@ -28,7 +28,7 @@ if (have_posts()) :
     --text-light: #FFFFFF;
     --text-dark: #212121;
     --background-light: #FAFAFA;
-    --background-dark: #F5F5F5;
+    --background-dark:rgb(255, 255, 255);
 }
 
 /* Estilos gerais de seção */

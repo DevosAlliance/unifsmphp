@@ -267,7 +267,7 @@ if (have_posts()) :
     display: flex;
     align-items: center;
     padding: 12px 15px;
-    background-color: #f5f5f5;
+    background-color:rgb(255, 255, 255);
     border-radius: 6px;
     transition: all 0.3s ease;
     text-decoration: none;
@@ -279,15 +279,15 @@ if (have_posts()) :
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     text-decoration: none;
-    background-color: #eef2ff;
+    background-color:rgb(255, 255, 255);
 }
 
 .link-item {
-    background-color: #f0f7ff;
+    background-color:rgb(255, 255, 255);
 }
 
 .link-item:hover {
-    background-color: #e1edff;
+    background-color:rgb(255, 255, 255);
 }
 
 .documento-icone {
