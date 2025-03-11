@@ -823,9 +823,6 @@ if (have_posts()) :
     <section class="section saiba-mais-section">
         <div class="container">
             <div class="saiba-mais-container">
-                <div class="saiba-mais-image">
-                    <!-- Imagem decorativa -->
-                </div>
                 <div class="saiba-mais-content">
                     <h2 class="saiba-mais-title">SAIBA MAIS</h2>
                     <p class="saiba-mais-description">O Núcleo de Empregabilidade e Empreendedorismo proporciona orientação e apoio aos alunos e ex-alunos da instituição, potencializando a formação profissional, favorecendo o acesso ao mercado de trabalho e promovendo a cultura empreendedora</p>
