@@ -904,9 +904,6 @@ if (have_posts()) :
                         </div>
                     </div>
                 </div>
-                <div class="contato-image">
-                    <!-- Imagem decorativa -->
-                </div>
             </div>
         </div>
     </section>
