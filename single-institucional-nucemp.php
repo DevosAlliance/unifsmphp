@@ -217,7 +217,7 @@ if (have_posts()) :
 .recurso-icon {
     width: 80px;
     height: 80px;
-    background-color: var(--primary-light); 
+    background-color: var(--text-light); 
     border-radius: 50%;
     margin: 0 auto 20px;
     display: flex;
