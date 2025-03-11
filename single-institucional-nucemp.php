@@ -156,19 +156,46 @@ if (have_posts()) :
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Recursos Section */
+/* Estilos gerais da seção */
 .recursos-section {
-    background-color: var(--background-light);
-    padding: 80px 0;
+    background-color: #f8f9fa;
+    padding: 60px 0;
 }
 
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #FF5722;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #FF9800;
+}
+
+/* Grid de recursos */
 .recursos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
+/* Cards de recurso */
 .recurso-card {
     background-color: white;
     border-radius: 10px;
@@ -186,38 +213,118 @@ if (have_posts()) :
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
+/* Ícones */
 .recurso-icon {
     width: 80px;
     height: 80px;
-    background-color: var(--primary-light);
+    background-color: #FFCCBC;
     border-radius: 50%;
     margin: 0 auto 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
 }
 
+.recurso-card:hover .recurso-icon {
+    background-color: #FF5722;
+    color: white;
+}
+
+/* Estilos dos ícones bootstrap */
+.recurso-icon i {
+    font-size: 2.5rem;
+    color: #FF5722;
+    transition: all 0.3s ease;
+}
+
+.recurso-card:hover .recurso-icon i {
+    color: white;
+}
+
+/* Título do recurso */
 .recurso-title {
     font-size: 1.2rem;
     font-weight: bold;
-    margin-bottom: 15px;
-    color: var(--primary-dark);
+    margin-bottom: 20px;
+    color: #333;
     flex: 1;
+    line-height: 1.4;
 }
 
+/* Link do recurso */
 .recurso-link {
     display: inline-block;
     padding: 10px 20px;
-    background-color: var(--primary-color);
+    background-color: #FF5722;
     color: white;
     text-decoration: none;
     border-radius: 30px;
     margin-top: 15px;
     transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .recurso-link:hover {
-    background-color: var(--primary-dark);
+    background-color: #E64A19;
+    transform: translateY(-3px);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .recursos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .recursos-grid {
+        gap: 20px;
+    }
+    
+    .recurso-card {
+        padding: 20px;
+    }
+    
+    .recurso-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .recurso-icon i {
+        font-size: 2rem;
+    }
+    
+    .recurso-title {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .recursos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .recurso-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .recurso-icon i {
+        font-size: 1.8rem;
+    }
 }
 
 /* Plataforma Section */
