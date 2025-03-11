@@ -176,13 +176,13 @@ function carregar_css_otimizado() {
         'header' => '/src/assets/css/header.css',
         'footer' => '/src/assets/css/footer.css',
         'b-footer' => '/src/assets/css/b-footer.css',
+        'infos' => '/src/assets/css/infos.css',
     ];
 
     $estilos_por_pagina = [
         'template-home.php' => [
             'slides' => '/src/assets/css/slides.css',
             'new' => '/src/assets/css/new.css',
-            'infos' => '/src/assets/css/infos.css',
             'graduation' => '/src/assets/css/graduation.css',
             'postgraduate' => '/src/assets/css/postgraduate.css',
             'about-us' => '/src/assets/css/about-us.css',
@@ -191,7 +191,6 @@ function carregar_css_otimizado() {
         'template-cursos.php' => [
             'courses' => '/src/assets/css/courses.css',
             'graduation' => '/src/assets/css/graduation.css',
-            'infos' => '/src/assets/css/infos.css',
             'courses' => '/src/assets/css/courses.css',
         ],
         'template-universidade.php' => [
@@ -199,6 +198,7 @@ function carregar_css_otimizado() {
             'new' => '/src/assets/css/new.css',
             'about-us' => '/src/assets/css/about-us.css',
             'graduation' => '/src/assets/css/graduation.css',
+
         ],
         'template-cpa.php' => [
             'cpa' => '/src/assets/css/cpa.css',

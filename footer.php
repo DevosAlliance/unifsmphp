@@ -137,7 +137,7 @@
         <script src="<?php echo get_template_directory_uri(); ?>/src/assets/js/accordion.js"></script>
         <script src="<?php echo get_template_directory_uri(); ?>/src/assets/js/carousel.js"></script>
         <script src="<?php echo get_template_directory_uri(); ?>/src/assets/js/slider.js"></script>
-        <!-- <script>
+        <script>
             (function () {
                 window.onload = function () {
                     new BlipChat()
@@ -147,6 +147,6 @@
                         .build();
                     }
              })();
-        </script> -->
+        </script>
     </body>
 </html>

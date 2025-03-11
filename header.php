@@ -37,7 +37,7 @@
         <script>
             document.addEventListener("DOMContentLoaded", function() {
                 var styles = [
-                    "top-nav", "header", "footer", "b-footer", "new", "news", "courses"
+                    "top-nav", "header", "footer", "b-footer", "new", "news", "courses", "infos"
                 ];
                 styles.forEach(function(sheet) {
                     var link = document.createElement("link");

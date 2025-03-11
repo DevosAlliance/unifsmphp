@@ -135,9 +135,4 @@ get_header();
         </div>
       </section>
     </main>
-
-
-    <!-- Custom -->
-    <script src="<?php echo get_template_directory_uri(); ?>/src/assets/js/main.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/src/assets/js/tabs.js"></script>
 <?php get_footer(); ?>

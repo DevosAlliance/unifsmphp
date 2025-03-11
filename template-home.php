@@ -324,7 +324,7 @@ get_header();
 
 
 
-    <section class="section">
+    <!-- <section class="section">
       <div class="pg__container">
           <div class="pg__graduation">
           <h5 class="title">Pós-Graduação</h5>
@@ -367,7 +367,7 @@ get_header();
           </div>
           </div>
       </div>
-    </section>
+    </section> -->
 
     <section class="section">
         <div class="au__container">
