@@ -27,7 +27,7 @@ if (have_posts()) :
 
 /* Seção de slogan */
 .cpa-slogan-section {
-    background-color: #00bcd4;
+    background-color: #1b2972;
     color: white;
     padding: 60px 0;
     text-align: center;
@@ -195,7 +195,7 @@ if (have_posts()) :
 }
 
 .contact-title {
-    background-color: #00bcd4;
+    background-color: #1b2972;
     color: white;
     padding: 20px;
     margin: 0;
@@ -219,7 +219,7 @@ if (have_posts()) :
 
 .contact-method h4 {
     font-size: 1.2rem;
-    color: #00bcd4;
+    color: #1b2972;
     margin-bottom: 10px;
 }
 
