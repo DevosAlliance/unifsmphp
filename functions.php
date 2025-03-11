@@ -200,6 +200,11 @@ function carregar_css_otimizado() {
             'graduation' => '/src/assets/css/graduation.css',
 
         ],
+        'template-editais.php' => [
+             'reitoria' => '/src/assets/css/reitoria.css',
+            'about-us' => '/src/assets/css/about-us.css',
+            'editais' => '/src/assets/css/editais.css',
+        ],
         'template-cpa.php' => [
             'cpa' => '/src/assets/css/cpa.css',
             'new' => '/src/assets/css/new.css',
