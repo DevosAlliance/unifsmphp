@@ -11,6 +11,335 @@ if (have_posts()) :
         $anexos = get_field('documentos'); // Repetidor de documentos
         $links  = get_field('links');
 ?>
+
+<style>
+    /* Estilos para a página da CPA */
+
+/* Estilos gerais */
+.cpa-info-section {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+.cpa-alt-section {
+    background-color: #ffffff;
+}
+
+/* Seção de slogan */
+.cpa-slogan-section {
+    background-color: #00bcd4;
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.cpa-slogan {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.slogan-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.slogan-description {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.cpa-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cpa-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #fff;
+    color: #00bcd4;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid #fff;
+}
+
+.cpa-button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cpa-button-outline {
+    background-color: transparent;
+    color: #fff;
+}
+
+.cpa-button-outline:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Seções de informação */
+.info-box {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.cpa-alt-section .info-box {
+    background-color: #f9f9f9;
+}
+
+.info-title {
+    background-color: #192B6C;
+    color: white;
+    padding: 15px 20px;
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    position: relative;
+}
+
+.info-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    width: 60px;
+    height: 3px;
+    background-color: #FFD700;
+}
+
+.info-content {
+    padding: 25px;
+}
+
+.info-content p {
+    margin: 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Seção de membros */
+.cpa-members-section {
+    background-color: #192B6C;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.cpa-members {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.members-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.members-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #FFD700;
+}
+
+.members-content {
+    margin-bottom: 30px;
+}
+
+.members-content p {
+    font-size: 1.2rem;
+}
+
+.members-action .cpa-button {
+    background-color: #FFD700;
+    border-color: #FFD700;
+    color: #192B6C;
+}
+
+.members-action .cpa-button:hover {
+    background-color: #e6c300;
+    border-color: #e6c300;
+}
+
+/* Seção de contato */
+.cpa-contact-section {
+    background-color: #f0f9fa;
+    padding: 50px 0;
+}
+
+.cpa-contact {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-title {
+    background-color: #00bcd4;
+    color: white;
+    padding: 20px;
+    margin: 0;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.contact-methods {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 30px 20px;
+}
+
+.contact-method {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    padding: 20px;
+}
+
+.contact-method h4 {
+    font-size: 1.2rem;
+    color: #00bcd4;
+    margin-bottom: 10px;
+}
+
+.contact-method p {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 0;
+}
+
+/* Estilos para documentos (já incluídos anteriormente) */
+.documentos-section {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+.documentos-container {
+    margin-top: 30px;
+}
+
+.documentos-grupo {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.documentos-grupo-titulo {
+    background-color: #192B6C;
+    color: white;
+    padding: 15px 20px;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.documentos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.documento-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    background-color: #f5f5f5;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #e0e0e0;
+}
+
+.documento-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-decoration: none;
+    background-color: #eef2ff;
+}
+
+.link-item {
+    background-color: #f0f7ff;
+}
+
+.link-item:hover {
+    background-color: #e1edff;
+}
+
+.documento-icone {
+    font-size: 20px;
+    margin-right: 12px;
+    color: #192B6C;
+}
+
+.documento-nome {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #192B6C;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .slogan-title {
+        font-size: 2.2rem;
+    }
+    
+    .slogan-description {
+        font-size: 1.2rem;
+    }
+    
+    .info-title {
+        font-size: 1.1rem;
+        padding: 12px 15px;
+    }
+    
+    .info-content {
+        padding: 15px;
+    }
+    
+    .info-content p {
+        font-size: 1rem;
+    }
+    
+    .contact-methods {
+        flex-direction: column;
+    }
+    
+    .contact-method {
+        padding: 15px 0;
+    }
+    
+    .documentos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
 <main class="main">
     <!-- Seção de Sobre -->
     <section class="section">
