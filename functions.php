@@ -224,6 +224,11 @@ function carregar_css_otimizado() {
             'about-us' => '/src/assets/css/about-us.css',
             'teste' => '/src/assets/css/teste.css',
         ],
+        'proex' => [
+            'reitoria' => '/src/assets/css/reitoria.css',
+            'about-us' => '/src/assets/css/about-us.css',
+            'teste' => '/src/assets/css/teste.css',
+        ],
         'curso' => [
             'course' => '/src/assets/css/course.css',
             'modal' => '/src/assets/css/modal.css',
