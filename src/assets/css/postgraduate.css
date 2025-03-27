@@ -64,13 +64,13 @@
 }
 
 .pg__content a {
-    width: 75px;
-    height: 75px;
+    width: 160px;
+    height: 2.5rem;
     text-align: center;
     background-color: var(--blue);
     font-size: var(--size-normal);
     font-weight: 300;
-    border-radius: 50%;
+    border-radius: 12px;
     color: var(--white);
     margin-bottom: 5px;
     display: flex;

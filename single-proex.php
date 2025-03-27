@@ -257,187 +257,214 @@ if (have_posts()) :
 
 
     <!-- Seção de Curricularização da Extensão -->
-    <?php if (!empty($texto_curricularizacao)) : ?>
-    <section class="section">
-        <div class="container">
-            <h2 class="text-center text-xl font-semibold mb-8">Curricularização da Extensão</h2>
-            <div class="spacing">
-                <div class="text-justify text-gray-600">
-                    <?php echo wpautop(wp_kses_post($texto_curricularizacao)); ?>
+<?php if (!empty($texto_curricularizacao)) : ?>
+<section class="section">
+    <div class="container">
+        <h2 class="text-center text-xl font-bold mb-8 titulo-setor">Curricularização da Extensão</h2>
+        <div class="spacing">
+            <div class="text-justify text-gray-600">
+                <?php echo wpautop(wp_kses_post($texto_curricularizacao)); ?>
+            </div>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
+<!-- Seção de Eventos Acadêmicos -->
+<?php if (!empty($texto_eventos) || !empty($eventos)) : ?>
+<section class="section">
+    <div class="container">
+        <h2 class="text-center text-xl font-bold mb-8 titulo-setor">Eventos Acadêmicos</h2>
+        
+        <?php if (!empty($texto_eventos)) : ?>
+        <div class="spacing">
+            <div class="text-justify text-gray-600">
+                <?php echo wpautop(wp_kses_post($texto_eventos)); ?>
+            </div>
+        </div>
+        <?php endif; ?>
+        
+        <?php if (!empty($eventos)) : ?>
+        <div class="cards__img">
+            <?php 
+            $count = 0;
+            foreach ($eventos as $evento) : 
+                $count++;
+            ?>
+            <div>
+                <?php
+                if (!empty($evento['imagem'])) :
+                    $img_id = $evento['imagem'];
+                    $img_url = wp_get_attachment_image_url($img_id, 'medium');
+                ?>
+                    <img alt="<?php echo esc_attr($evento['nome']); ?>" 
+                        src="<?php echo esc_url($img_url); ?>" loading="lazy"/>
+                <?php endif; ?>
+                <p><?php echo esc_html($evento['nome']); ?></p>
+                <?php if (!empty($evento['informacoes'])) : ?>
+                <span><?php echo esc_html($evento['informacoes']); ?></span>
+                <?php endif; ?>
+            </div>
+            <?php 
+                if ($count % 3 == 0) echo '<span style="width: 100%;"></span>'; // Quebra a linha a cada 3 itens
+                endforeach; 
+            ?>
+        </div>
+        <?php endif; ?>
+    </div>
+</section>
+<?php endif; ?>
+
+<!-- Seção de Internacionalização -->
+<?php if (!empty($texto_internacionalizacao) || !empty($parceiros)) : ?>
+<section class="section">
+    <div class="container">
+        <h2 class="text-center text-xl font-bold mb-8 titulo-setor">Internacionalização</h2>
+        
+        <?php if (!empty($texto_internacionalizacao)) : ?>
+        <div class="spacing">
+            <div class="text-justify text-gray-600">
+                <?php echo wpautop(wp_kses_post($texto_internacionalizacao)); ?>
+            </div>
+        </div>
+        <?php endif; ?>
+        
+        <?php if (!empty($parceiros)) : ?>
+        <h3 class="text-center text-lg font-bold mb-8">Parceiros</h3>
+        <div class="cards__img">
+            <?php 
+            $count = 0;
+            foreach ($parceiros as $parceiro) : 
+                $count++;
+            ?>
+            <div>
+                <?php
+                if (!empty($parceiro['foto'])) :
+                    $img_id = $parceiro['foto'];
+                    $img_url = wp_get_attachment_image_url($img_id, 'medium');
+                ?>
+                    <img alt="<?php echo esc_attr($parceiro['nome']); ?>" 
+                        src="<?php echo esc_url($img_url); ?>" loading="lazy"/>
+                <?php endif; ?>
+
+                <p><?php echo esc_html($parceiro['nome']); ?></p>
+                <?php if (!empty($parceiro['link'])) : ?>
+                <a href="<?php echo esc_url($parceiro['link']); ?>" target="_blank" class="btn">Visitar</a>
+                <?php endif; ?>
+            </div>
+            <?php 
+                if ($count % 3 == 0) echo '<span style="width: 100%;"></span>'; // Quebra a linha a cada 3 itens
+                endforeach; 
+            ?>
+        </div>
+        <?php endif; ?>
+    </div>
+</section>
+<?php endif; ?>
+
+<!-- Seção de Ligas e Atléticas -->
+<?php if (!empty($texto_ligas) || !empty($ligas)) : ?>
+<section class="section">
+    <div class="container">
+        <h2 class="text-center text-xl font-bold mb-8 titulo-setor">Ligas e Atléticas</h2>
+        
+        <?php if (!empty($texto_ligas)) : ?>
+        <div class="spacing">
+            <div class="text-justify text-gray-600">
+                <?php echo wpautop(wp_kses_post($texto_ligas)); ?>
+            </div>
+        </div>
+        <?php endif; ?>
+        
+        <?php if (!empty($ligas)) : ?>
+        <div class="cards__img">
+            <?php 
+            $count = 0;
+            foreach ($ligas as $liga) : 
+                $count++;
+            ?>
+            <div>
+                <?php if (!empty($liga['foto'])) : ?>
+                <img alt="<?php echo esc_attr($liga['nome']); ?>" 
+                     src="<?php echo esc_url($liga['foto']['url']); ?>" loading="lazy"/>
+                <?php endif; ?>
+                <p><?php echo esc_html($liga['nome']); ?></p>
+                <?php if (!empty($liga['link'])) : ?>
+                <a href="<?php echo esc_url($liga['link']); ?>" target="_blank" class="btn">Visitar</a>
+                <?php endif; ?>
+            </div>
+            <?php 
+                if ($count % 3 == 0) echo '<span style="width: 100%;"></span>'; // Quebra a linha a cada 3 itens
+                endforeach; 
+            ?>
+        </div>
+        <?php endif; ?>
+    </div>
+</section>
+<?php endif; ?>
+
+<!-- Seção de Publicações -->
+<?php if (!empty($publicacoes)) : ?>
+<section class="section">
+    <div class="container">
+        <h2 class="text-center text-xl font-bold mb-8 titulo-setor">Publicações</h2>
+        <div class="cards__img">
+            <?php 
+            $count = 0;
+            foreach ($publicacoes as $publicacao) : 
+                $count++;
+            ?>
+            <div>
+                <?php if (!empty($publicacao['foto'])) : ?>
+                <img alt="<?php echo esc_attr($publicacao['nome']); ?>" 
+                     src="<?php echo esc_url($publicacao['foto']['url']); ?>" loading="lazy"/>
+                <?php endif; ?>
+                <p><?php echo esc_html($publicacao['nome']); ?></p>
+                <?php if (!empty($publicacao['link'])) : ?>
+                <a href="<?php echo esc_url($publicacao['link']); ?>" target="_blank" class="btn">Acessar</a>
+                <?php endif; ?>
+            </div>
+            <?php 
+                if ($count % 3 == 0) echo '<span style="width: 100%;"></span>'; // Quebra a linha a cada 3 itens
+                endforeach; 
+            ?>
+        </div>
+    </div>
+</section>
+<?php endif; ?>
+
+<!-- Seção de Documentos -->
+<section class="section">
+    <div class="container">
+        <h2 class="text-center text-xl font-bold mb-8 titulo-setor">Documentos</h2>
+        <div class="documentos-wrapper">
+            <?php foreach ($documentos_agrupados as $tipo => $docs) : ?>
+                <button class="btn-categoria btn" data-modal-target="modal-<?php echo esc_attr(sanitize_title($tipo)); ?>">
+                    <?php echo esc_html($tipo); ?>
+                </button>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
+    <!-- Modais para os documentos -->
+    <?php foreach ($documentos_agrupados as $tipo => $docs) : ?>
+        <div id="modal-<?php echo esc_attr(sanitize_title($tipo)); ?>" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2><?php echo esc_html($tipo); ?></h2>
+                    <span class="modal-close">&times;</span>
+                </div>
+                <div class="modal-body">
+                    <?php foreach ($docs as $doc) : ?>
+                        <a class="documento-item modal-documento-item" href="<?php echo esc_url($doc['arquivo']['url']); ?>" target="_blank">
+                            <?php echo esc_html($doc['nome']); ?>
+                        </a>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
-    </section>
-    <?php endif; ?>
-
-    <!-- Seção de Eventos Acadêmicos -->
-    <?php if (!empty($texto_eventos) || !empty($eventos)) : ?>
-    <section class="section mb-8">
-        <div class="container">
-            <h2 class="text-center text-xl font-semibold mb-8">Eventos Acadêmicos</h2>
-            
-            <?php if (!empty($texto_eventos)) : ?>
-            <div class="spacing">
-                <div class="text-justify text-gray-600">
-                    <?php echo wpautop(wp_kses_post($texto_eventos)); ?>
-                </div>
-            </div>
-            <?php endif; ?>
-            
-            <?php if (!empty($eventos)) : ?>
-            <div class="cards__img">
-                <?php foreach ($eventos as $evento) : ?>
-                <div>
-                    <?php
-                    if (!empty($evento['imagem'])) :
-                        $img_id = $evento['imagem'];
-                        $img_url = wp_get_attachment_image_url($img_id, 'medium'); // ou 'full', 'thumbnail', etc.
-                    ?>
-                        <img alt="<?php echo esc_attr($evento['nome']); ?>" 
-                            src="<?php echo esc_url($img_url); ?>" loading="lazy"/>
-                    <?php endif; ?>
-                    <p><?php echo esc_html($evento['nome']); ?></p>
-                    <?php if (!empty($evento['informacoes'])) : ?>
-                    <span><?php echo esc_html($evento['informacoes']); ?></span>
-                    <?php endif; ?>
-                </div>
-                <?php endforeach; ?>
-            </div>
-            <?php endif; ?>
-        </div>
-    </section>
-    <?php endif; ?>
-
-    <!-- Seção de Internacionalização -->
-    <?php if (!empty($texto_internacionalizacao) || !empty($parceiros)) : ?>
-    <section class="section mb-8">
-        <div class="container">
-            <h2 class="text-center text-xl font-semibold mb-8">Internacionalização</h2>
-            
-            <?php if (!empty($texto_internacionalizacao)) : ?>
-            <div class="spacing">
-                <div class="text-justify text-gray-600">
-                    <?php echo wpautop(wp_kses_post($texto_internacionalizacao)); ?>
-                </div>
-            </div>
-            <?php endif; ?>
-            
-            <?php if (!empty($parceiros)) : ?>
-            <h3 class="text-center text-lg font-semibold mb-8">Parceiros</h3>
-            <div class="cards__img">
-                <?php foreach ($parceiros as $parceiro) : ?>
-                <div>
-                    <?php
-                    if (!empty($parceiro['foto'])) :
-                        $img_id = $parceiro['foto'];
-                        $img_url = wp_get_attachment_image_url($img_id, 'medium'); // ou 'full', se quiser imagem maior
-                    ?>
-                        <img alt="<?php echo esc_attr($parceiro['nome']); ?>" 
-                            src="<?php echo esc_url($img_url); ?>" loading="lazy"/>
-                    <?php endif; ?>
-
-                    <p><?php echo esc_html($parceiro['nome']); ?></p>
-                    <?php if (!empty($parceiro['link'])) : ?>
-                    <a href="<?php echo esc_url($parceiro['link']); ?>" target="_blank" class="btn">Visitar</a>
-                    <?php endif; ?>
-                </div>
-                <?php endforeach; ?>
-            </div>
-            <?php endif; ?>
-        </div>
-    </section>
-    <?php endif; ?>
-
-
-    <!-- Seção de Ligas e Atléticas -->
-    <?php if (!empty($texto_ligas) || !empty($ligas)) : ?>
-    <section class="section mb-8">
-        <div class="container">
-            <h2 class="text-center text-xl font-semibold mb-8">Ligas e Atléticas</h2>
-            
-            <?php if (!empty($texto_ligas)) : ?>
-            <div class="spacing">
-                <div class="text-justify text-gray-600">
-                    <?php echo wpautop(wp_kses_post($texto_ligas)); ?>
-                </div>
-            </div>
-            <?php endif; ?>
-            
-            <?php if (!empty($ligas)) : ?>
-            <div class="cards__img">
-                <?php foreach ($ligas as $liga) : ?>
-                <div>
-                    <?php if (!empty($liga['foto'])) : ?>
-                    <img alt="<?php echo esc_attr($liga['nome']); ?>" 
-                         src="<?php echo esc_url($liga['foto']['url']); ?>" loading="lazy"/>
-                    <?php endif; ?>
-                    <p><?php echo esc_html($liga['nome']); ?></p>
-                    <?php if (!empty($liga['link'])) : ?>
-                    <a href="<?php echo esc_url($liga['link']); ?>" target="_blank" class="btn">Visitar</a>
-                    <?php endif; ?>
-                </div>
-                <?php endforeach; ?>
-            </div>
-            <?php endif; ?>
-        </div>
-    </section>
-    <?php endif; ?>
-
-    <!-- Seção de Publicações -->
-    <?php if (!empty($publicacoes)) : ?>
-    <section class="section mb-8">
-        <div class="container">
-            <h2 class="text-center text-xl font-semibold mb-8">Publicações</h2>
-            <div class="cards__img">
-                <?php foreach ($publicacoes as $publicacao) : ?>
-                <div>
-                    <?php if (!empty($publicacao['foto'])) : ?>
-                    <img alt="<?php echo esc_attr($publicacao['nome']); ?>" 
-                         src="<?php echo esc_url($publicacao['foto']['url']); ?>" loading="lazy"/>
-                    <?php endif; ?>
-                    <p><?php echo esc_html($publicacao['nome']); ?></p>
-                    <?php if (!empty($publicacao['link'])) : ?>
-                    <a href="<?php echo esc_url($publicacao['link']); ?>" target="_blank" class="btn">Acessar</a>
-                    <?php endif; ?>
-                </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </section>
-    <?php endif; ?>
-
-    <!-- Seção de Documentos (única para ambos desktop e mobile) -->
-    <section class="section">
-        <h2 class="text-center text-xl font-semibold">Documentos</h2>
-        <div class="container">
-            <div class="documentos-wrapper">
-                <?php foreach ($documentos_agrupados as $tipo => $docs) : ?>
-                    <button class="btn-categoria btn" data-modal-target="modal-<?php echo esc_attr(sanitize_title($tipo)); ?>">
-                        <?php echo esc_html($tipo); ?>
-                    </button>
-                <?php endforeach; ?>
-            </div>
-        </div>
-
-        <!-- Modais para os documentos -->
-        <?php foreach ($documentos_agrupados as $tipo => $docs) : ?>
-            <div id="modal-<?php echo esc_attr(sanitize_title($tipo)); ?>" class="modal">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h2><?php echo esc_html($tipo); ?></h2>
-                        <span class="modal-close">&times;</span>
-                    </div>
-                    <div class="modal-body">
-                        <?php foreach ($docs as $doc) : ?>
-                            <a class="documento-item modal-documento-item" href="<?php echo esc_url($doc['arquivo']['url']); ?>" target="_blank">
-                                <?php echo esc_html($doc['nome']); ?>
-                            </a>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-            </div>
-        <?php endforeach; ?>
-    </section>
+    <?php endforeach; ?>
+</section>
 
 
 

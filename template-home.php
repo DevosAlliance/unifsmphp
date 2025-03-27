@@ -321,53 +321,21 @@ get_header();
       </div>
     </section>
 
-
-
-
-    <!-- <section class="section">
-      <div class="pg__container">
-          <div class="pg__graduation">
-          <h5 class="title">Pós-Graduação</h5>
-          <p class="pg__text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
-              eligendi doloremque porro vero expedita, non dicta dolores ducimus
-              deleniti exercitationem, incidunt voluptatem atque sit iusto vel
-              nisi saepe in laudantium!
-          </p>
-          <div>
-              <a class="a__yellow" href="#"
-              >Saiba mais <i class="ri-arrow-right-up-line"></i
-              ></a>
-          </div>
-          </div>
-          <div class="pg__content">
-          <div class="pg__card">
-              <div>
-              <span>Residência Médica</span>
-              </div>
-              <a href="#">Saiba mais</a>
-          </div>
-          <div class="pg__card">
-              <div>
-              <span>Cursos Rápidos</span>
-              </div>
-              <a href="#">Saiba mais</a>
-          </div>
-          <div class="pg__card">
-              <div>
-              <span>Pós em EAD</span>
-              </div>
-              <a href="#">Saiba mais</a>
-          </div>
-          <div class="pg__card">
-              <div>
-              <span>Cursos</span>
-              </div>
-              <a href="#">Saiba mais</a>
-          </div>
-          </div>
-      </div>
-    </section> -->
+    <section class="section">
+    <div class="pg__container">
+        <div class="pg__graduation">
+            <h5 class="title">Editais</h5>
+            <p class="pg__text">
+                Fique por dentro dos processos seletivos e oportunidades disponíveis na UNIFSM. 
+                Para ter acesso a todos os editais e participar dos processos seletivos, 
+                basta acessar o link e seguir as instruções específicas de cada edital.
+            </p>
+        </div>
+        <div class="pg__content">
+                <a href="<?php echo esc_url(home_url('/editais')); ?>">Saiba mais</a>
+        </div>
+    </div>
+    </section>
 
     <section class="section">
         <div class="au__container">
