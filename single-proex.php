@@ -41,69 +41,160 @@ if (have_posts()) :
 ?>
 
 <style>
-    .documentos-wrapper {
+/* Ajustes adicionais para seus estilos existentes */
+.documentos-wrapper {
     display: flex;
     flex-wrap: wrap;
-        gap: 2rem;
-        justify-content: space-between;
-        margin-bottom: 2rem;
-    }
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
 
-    .documento-coluna {
-        flex: 1 1 18%;
-        min-width: 200px;
-        background-color: #ffffff;
+
+/* Estilos para a modal mais larga com 3 colunas */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 900px; /* Modal mais larga */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    max-height: 80vh;
+    overflow-y: auto;
+    
+    /* Centralizar na visualização do usuário */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #2d3748;
+}
+
+.modal-close {
+    color: #a0aec0;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: #4a5568;
+}
+
+/* Layout de 3 colunas para a modal */
+.modal-body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+/* Estilo para os itens de documento dentro da modal */
+.modal-documento-item {
+    display: flex;
+    align-items: center;
+    background-color: #4299e1;
+    color: white;
+    padding: 12px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.3;
+}
+
+.modal-documento-item:hover {
+    background-color: #2b6cb0;
+}
+
+.modal-documento-item::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+}
+
+/* Responsividade */
+@media screen and (max-width: 992px) {
+    .modal-body {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        max-width: 95%;
         padding: 1rem;
-        border-radius: 8px;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        max-height: 80vh;
     }
+    
+    .modal-body {
+        grid-template-columns: 1fr; /* 1 coluna em dispositivos móveis */
+        gap: 0.5rem;
+    }
+    
+    .modal-header h2 {
+        font-size: 1.1rem;
+    }
+    
+    .modal-close {
+        font-size: 24px;
+    }
+    
+    .modal-documento-item {
+        padding: 10px 12px;
+    }
+}
 
-    .documento-coluna h3 {
-        text-align: center;
-        font-weight: bold;
-        margin-bottom: 1rem;
+@media screen and (max-width: 350px) {
+    .modal-content {
+        width: 95%;
+        padding: 0.75rem;
     }
-
-    .documento-item {
-        display: block;
-        background-color: #4299e1;
-        color: white;
-        padding: 0.6rem;
-        border-radius: 6px;
-        margin-bottom: 0.5rem;
-        text-align: center;
-        font-weight: 500;
-        text-decoration: none;
-        transition: background 0.3s;
+    
+    .modal-documento-item {
+        font-size: 0.85rem;
     }
-
-    .documento-item:hover {
-        background-color: #2b6cb0;
-    }
-
-    .select-mobile {
-        display: none;
-        margin: 1rem 0;
-        width: 100%;
-        padding: 0.6rem;
-        border-radius: 6px;
-        font-size: 1rem;
-    }
-
-    @media screen and (max-width: 768px) {
-        .documentos-wrapper {
-            display: none;
-        }
-        .select-mobile {
-            display: block;
-        }
-        .mobile-documentos {
-            margin-top: 1rem;
-        }
-        .mobile-documentos .documento-item {
-            width: 100%;
-        }
-    }
+}
 </style>
 
 <main class="main">
@@ -181,7 +272,7 @@ if (have_posts()) :
 
     <!-- Seção de Eventos Acadêmicos -->
     <?php if (!empty($texto_eventos) || !empty($eventos)) : ?>
-    <section class="section">
+    <section class="section mb-8">
         <div class="container">
             <h2 class="text-center text-xl font-semibold mb-8">Eventos Acadêmicos</h2>
             
@@ -219,7 +310,7 @@ if (have_posts()) :
 
     <!-- Seção de Internacionalização -->
     <?php if (!empty($texto_internacionalizacao) || !empty($parceiros)) : ?>
-    <section class="section">
+    <section class="section mb-8">
         <div class="container">
             <h2 class="text-center text-xl font-semibold mb-8">Internacionalização</h2>
             
@@ -232,7 +323,7 @@ if (have_posts()) :
             <?php endif; ?>
             
             <?php if (!empty($parceiros)) : ?>
-            <h3 class="text-center text-lg font-semibold mb-4">Parceiros Internacionais</h3>
+            <h3 class="text-center text-lg font-semibold mb-8">Parceiros</h3>
             <div class="cards__img">
                 <?php foreach ($parceiros as $parceiro) : ?>
                 <div>
@@ -260,7 +351,7 @@ if (have_posts()) :
 
     <!-- Seção de Ligas e Atléticas -->
     <?php if (!empty($texto_ligas) || !empty($ligas)) : ?>
-    <section class="section">
+    <section class="section mb-8">
         <div class="container">
             <h2 class="text-center text-xl font-semibold mb-8">Ligas e Atléticas</h2>
             
@@ -294,7 +385,7 @@ if (have_posts()) :
 
     <!-- Seção de Publicações -->
     <?php if (!empty($publicacoes)) : ?>
-    <section class="section">
+    <section class="section mb-8">
         <div class="container">
             <h2 class="text-center text-xl font-semibold mb-8">Publicações</h2>
             <div class="cards__img">
@@ -315,57 +406,40 @@ if (have_posts()) :
     </section>
     <?php endif; ?>
 
-    <!-- Seção de Documentos - Desktop -->
-    <section class="section d-none-mobile">
-        <h2 class="text-center text-xl font-semibold mb-8">Documentos</h2>
+    <!-- Seção de Documentos (única para ambos desktop e mobile) -->
+    <section class="section">
+        <h2 class="text-center text-xl font-semibold">Documentos</h2>
         <div class="container">
-            <div class="cards__img">
+            <div class="documentos-wrapper">
                 <?php foreach ($documentos_agrupados as $tipo => $docs) : ?>
-                    <div class="cards__img">
-                        <h3 class="text-center font-bold mb-2"><?php echo esc_html($tipo); ?></h3>
-                        <?php foreach ($docs as $doc) : ?>
-                            <a class="btn" href="<?php echo esc_url($doc['arquivo']['url']); ?>" target="_blank">
-                                <?php echo esc_html($doc['nome']); ?>
-                            </a>
-                        <?php endforeach; ?>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção de Documentos - Mobile -->
-    <section class="section only-mobile">
-        <div class="container">
-            <select id="filtro-documento" class="btn w-full mb-2">
-                <option value="">Selecione uma categoria</option>
-                <?php foreach ($documentos_agrupados as $tipo => $docs) : ?>
-                    <option value="<?php echo esc_attr($tipo); ?>"><?php echo esc_html($tipo); ?></option>
-                <?php endforeach; ?>
-            </select>
-
-            <div id="documentos-filtrados">
-                <?php foreach ($documentos_agrupados as $tipo => $docs) : ?>
-                    <div class="grupo-documento" data-tipo="<?php echo esc_attr($tipo); ?>" style="display:none;">
-                        <?php foreach ($docs as $doc) : ?>
-                            <a class="btn w-full mb-2" href="<?php echo esc_url($doc['arquivo']['url']); ?>" target="_blank">
-                                <?php echo esc_html($doc['nome']); ?>
-                            </a>
-                        <?php endforeach; ?>
-                    </div>
+                    <button class="btn-categoria btn" data-modal-target="modal-<?php echo esc_attr(sanitize_title($tipo)); ?>">
+                        <?php echo esc_html($tipo); ?>
+                    </button>
                 <?php endforeach; ?>
             </div>
         </div>
 
-        <script>
-        document.getElementById('filtro-documento').addEventListener('change', function () {
-            const tipo = this.value;
-            document.querySelectorAll('.grupo-documento').forEach(group => {
-                group.style.display = group.getAttribute('data-tipo') === tipo ? 'block' : 'none';
-            });
-        });
-        </script>
+        <!-- Modais para os documentos -->
+        <?php foreach ($documentos_agrupados as $tipo => $docs) : ?>
+            <div id="modal-<?php echo esc_attr(sanitize_title($tipo)); ?>" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2><?php echo esc_html($tipo); ?></h2>
+                        <span class="modal-close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <?php foreach ($docs as $doc) : ?>
+                            <a class="documento-item modal-documento-item" href="<?php echo esc_url($doc['arquivo']['url']); ?>" target="_blank">
+                                <?php echo esc_html($doc['nome']); ?>
+                            </a>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
     </section>
+
+
 
 </main>
 
@@ -386,3 +460,53 @@ endif;
 
 get_footer();
 ?>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const botoes = document.querySelectorAll('.btn-categoria');
+    
+    function abrirModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+    }
+    
+    function fecharModal(modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+    
+    botoes.forEach(botao => {
+        botao.addEventListener('click', function() {
+            const modalId = this.getAttribute('data-modal-target');
+            abrirModal(modalId);
+        });
+    });
+    
+    const closeButtons = document.querySelectorAll('.modal-close');
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const modal = this.closest('.modal');
+            fecharModal(modal);
+        });
+    });
+    
+    window.addEventListener('click', function(event) {
+        if (event.target.classList.contains('modal')) {
+            fecharModal(event.target);
+        }
+    });
+    
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            const modaisAbertas = document.querySelectorAll('.modal[style*="display: block"]');
+            modaisAbertas.forEach(modal => {
+                fecharModal(modal);
+            });
+        }
+    });
+});
+</script>
