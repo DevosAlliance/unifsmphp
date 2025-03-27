@@ -1,0 +1,14 @@
+# Ignore minified CSS files
+*.min.css
+
+# Don't ignore these specific files if needed
+# !specific-file.min.css
+
+# Other common files to ignore in WordPress themes
+node_modules/
+.DS_Store
+.idea/
+.vscode/
+*.log
+*.zip
+*.tar.gz
